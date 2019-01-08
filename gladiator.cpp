@@ -34,7 +34,7 @@ int main()
         style = getInput("I've never heard of a " + style + "! Are you a mage, a warrior, or a dualfighter?");
     }
     race = getInput("OK, then. What's your race?");
-    while (race.compare("human") != 0 && race.compare("dwarf") != 0 && race.compare("dwarf") != 0)
+    while (race.compare("human") != 0 && race.compare("dwarf") != 0 && race.compare("elf") != 0)
     {
         race = getInput("Don't lie to me, I can clearly tell what you aren't a " + race + "! Now, what race are you?");
     }
