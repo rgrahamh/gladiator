@@ -5,4 +5,4 @@ Makefile
 
 # executables
 gladiator
-test-human
+tests/test*
