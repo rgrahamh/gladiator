@@ -8,6 +8,7 @@ using namespace std;
 class Style
 {
   public:
+    Style();
     Style(string t, double a, double d, double c, double r, double e, double h, double sp, double sk, double l);
     ~Style();
     // TODO: string getType();

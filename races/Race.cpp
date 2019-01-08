@@ -1,5 +1,9 @@
 #include "Race.h"
 
+Race::Race()
+{
+}
+
 Race::Race(string t, double a, double d, double c, double r, double e, double h, double sp, double sk, double l)
 {
     this->type = t;
