@@ -3,27 +3,27 @@
 
 Weapon::Weapon(string n, double w, int val, double dmg, int t) : Item(n, w, val)
 {
-    damage = dmg;
-    type = t;
+    this->damage = dmg;
+    this->type = t;
 }
 Weapon::~Weapon()
 {
 }
 double Weapon::getDamage()
 {
-    return damage;
+    return this->damage;
 }
 int Weapon::getType()
 {
-    return type;
+    return this->type;
 }
 
 int main()
 {
-    Weapon glove = Weapon("Pairing Knife", 1.5, 2, 2, 2);
-    cout << glove.getName() << endl
-         << "Weight: " << glove.getWeight() << endl
-         << "Value: " << glove.getValue() << endl
-         << "Defense: " << glove.getDamage() << endl;
+    Weapon sword = Weapon("Pairing Knife", 1.5, 2, 2, 2);
+    cout << sword.getName() << endl
+         << "Weight: " << sword.getWeight() << endl
+         << "Value: " << sword.getValue() << endl
+         << "Damage: " << sword.getDamage() << endl;
     return 0;
 }

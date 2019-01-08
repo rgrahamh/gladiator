@@ -2,9 +2,9 @@
 
 Item::Item(string n, double w, int val)
 {
-    name = n;
-    weight = w;
-    value = val;
+    this->name = n;
+    this->weight = w;
+    this->value = val;
 }
 
 Item::~Item()
@@ -13,13 +13,13 @@ Item::~Item()
 
 string Item::getName()
 {
-    return name;
+    return this->name;
 }
 double Item::getWeight()
 {
-    return weight;
+    return this->weight;
 }
 int Item::getValue()
 {
-    return value;
+    return this->value;
 }

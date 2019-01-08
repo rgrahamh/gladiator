@@ -2,24 +2,24 @@
 
 Armor::Armor(string n, double w, int val, double def, double res, int t) : Item(n, w, val)
 {
-    defense = def;
-    resilience = res;
-    type = t;
+    this->defense = def;
+    this->resilience = res;
+    this->type = t;
 }
 Armor::~Armor()
 {
 }
 double Armor::getDefense()
 {
-    return defense;
+    return this->defense;
 }
 double Armor::getResilence()
 {
-    return resilience;
+    return this->resilience;
 }
 int Armor::getType()
 {
-    return type;
+    return this->type;
 }
 int main()
 {
