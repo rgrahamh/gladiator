@@ -5,7 +5,7 @@ CFLAGS= -Wall
 gladiator: gladiator.cpp
 	$(CC) $(CFLAGS) -o gladiator gladiator.cpp
 
-tests: test-human test-armor test-weapon
+tests: test-armor test-human test-warrior test-weapon
 
 test-armor: items/Item.cpp items/Armor.cpp
 	$(CC) $(CFLAGS) -o tests/test-armor items/Item.cpp items/Armor.cpp
