@@ -15,3 +15,6 @@ test-armor: items/Item.cpp items/Armor.cpp
 
 test-weapon: items/Item.cpp items/Weapon.cpp
 	$(CC) $(CFLAGS) -o tests/test-weapon items/Item.cpp items/Weapon.cpp
+
+test-potion: items/Item.cpp items/Potion.cpp
+	$(CC) $(CFLAGS) -o tests/test-potion items/Item.cpp items/Potion.cpp
