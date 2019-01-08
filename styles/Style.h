@@ -1,3 +1,6 @@
+#ifndef STYLE_H
+#define STYLE_H
+
 #include <string>
 
 using namespace std;
@@ -48,3 +51,5 @@ class Style
     double luck;
     bool abilities[6];
 };
+
+#endif

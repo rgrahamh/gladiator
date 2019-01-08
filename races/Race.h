@@ -1,3 +1,6 @@
+#ifndef RACE_H
+#define RACE_H
+
 #include <string>
 
 using namespace std;
@@ -48,3 +51,5 @@ private:
   double luck;
   bool abilities[6];
 };
+
+#endif
