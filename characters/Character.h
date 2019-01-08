@@ -1,17 +1,16 @@
-#ifndef STYLE_H
-#define STYLE_H
+#ifndef CHARACTER_H
+#define CHARACTER_H
 
 #include <string>
+#include "../races/Race.h"
+#include "../styles/Style.h"
 
-using namespace std;
-
-class Style
+class Character
 {
   public:
-    Style();
-    Style(string t, double a, double d, double c, double r, double e, double h, double sp, double sk, double l);
-    ~Style();
-    // TODO: string getType();
+    Character(Race race, Style style);
+    ~Character();
+    void determineStats();
     double getAttack();
     double getDefense();
     double getConstitution();
@@ -21,26 +20,15 @@ class Style
     double getSpeed();
     double getSkill();
     double getLuck();
+    string getAbilityStr(bool *ab);
     bool *getAbilities()
     {
         return this->abilities;
     }
-    void setAbilities(bool *ab)
-    {
-        copy(ab, ab + sizeof(ab), this->abilities);
-    }
 
   private:
-    enum abils
-    {
-        LANCE,
-        SWORD,
-        AXE,
-        LIGHT,
-        DARK,
-        ANIMA
-    };
-    string type;
+    Race race;
+    Style style;
     double attack;
     double defense;
     double constitution;

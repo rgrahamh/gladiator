@@ -1,3 +1,6 @@
+#ifndef RACE_H
+#define RACE_H
+
 #include <string>
 
 using namespace std;
@@ -5,6 +8,7 @@ using namespace std;
 class Race
 {
 public:
+  Race();
   Race(string t, double a, double d, double c, double r, double e, double h, double sp, double sk, double l);
   ~Race();
   // TODO: string getType();
@@ -48,3 +52,5 @@ private:
   double luck;
   bool abilities[6];
 };
+
+#endif

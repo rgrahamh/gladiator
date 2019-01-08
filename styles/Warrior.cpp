@@ -1,19 +1,15 @@
-#include "Style.h"
-#include <iostream>
+#include "Warrior.h"
 
-class Warrior : public Style
+#include <iostream>
+// ATTRIBUTES: TYPE, ATTACK, DEFENSE, CONSTITUTION, RESILIENCE, ENERGY, HEALTH, SPEED, SKILL, LUCK
+Warrior::Warrior() : Style("warrior", 10.0, 10.0, 0.0, 0.0, 50.0, 15.0, 12.0, 3.0, 2.0)
 {
-  public:
-    // ATTRIBUTES: TYPE, ATTACK, DEFENSE, CONSTITUTION, RESILIENCE, ENERGY, HEALTH, SPEED, SKILL, LUCK
-    Warrior() : Style("warrior", 10.0, 10.0, 0.0, 0.0, 50.0, 15.0, 12.0, 3.0, 2.0)
-    {
-        // ABILITIES: LANCE, SWORD, AXE, LIGHT, DARK, ANIMA
-        bool humAbils[6] = {false, true, true, false, false, false};
-        this->setAbilities(humAbils);
-    }
+    // ABILITIES: LANCE, SWORD, AXE, LIGHT, DARK, ANIMA
+    bool humAbils[6] = {true, true, false, false, false, true};
+    this->setAbilities(humAbils);
 };
 
-string getAbilityStr(bool *ab)
+string Warrior::getAbilityStr(bool *ab)
 {
     string result = "";
     (ab[0]) ? result = result + " LANCE" : result = result + "";
@@ -23,21 +19,4 @@ string getAbilityStr(bool *ab)
     (ab[4]) ? result = result + " DARK" : result = result + "";
     (ab[5]) ? result = result + " ANIMA" : result = result + "";
     return result;
-}
-
-int main()
-{
-    Warrior w = Warrior();
-    string abils_str = getAbilityStr(w.getAbilities());
-    cout << "Warrior Stats:" << endl
-         << "Attack: " << w.getAttack() << endl
-         << "Defense: " << w.getDefense() << endl
-         << "Constitution: " << w.getConstitution() << endl
-         << "Resilience: " << w.getResilience() << endl
-         << "Energy: " << w.getEnergy() << endl
-         << "Health: " << w.getHealth() << endl
-         << "Speed: " << w.getSpeed() << endl
-         << "Skill: " << w.getSkill() << endl
-         << "Luck: " << w.getLuck() << endl
-         << "Abilities: " << abils_str << endl;
 }
