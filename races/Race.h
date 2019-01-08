@@ -7,6 +7,7 @@ class Race
 public:
   Race(string t, double a, double d, double c, double r, double e, double h, double sp, double sk, double l);
   ~Race();
+  // TODO: string getType();
   double getAttack();
   double getDefense();
   double getConstitution();
