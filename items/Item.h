@@ -2,6 +2,7 @@
 #define ITEM_H
 
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -13,8 +14,9 @@ public:
   string getName();
   double getWeight();
   int getValue();
+  void print();
 
-private:
+protected:
   string name;
   double weight;
   int value;

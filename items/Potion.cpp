@@ -15,12 +15,18 @@ double Potion::getAmount()
     return this->amount;
 }
 
+void Potion::print()
+{
+    cout << this->name << ":" << endl
+         << "Effect: " << potionEffects[(this->effect) - 1] << endl
+         << "Amount: " << this->amount << endl
+         << "Value: " << this->value << endl
+         << "Weight: " << this->weight << endl;
+}
+
 int main()
 {
     Potion healing = Potion("Helaing Potion", 0.2, 4, 1, 25);
-    cout << healing.getName() << endl
-         << "Weight: " << healing.getWeight() << endl
-         << "Value: " << healing.getValue() << endl
-         << "Healing: " << healing.getAmount() << endl;
+    healing.print();
     return 0;
 }

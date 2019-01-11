@@ -2,21 +2,24 @@
 #define POTION_H
 #include "Item.h"
 
+const string potionEffects[2] = {"Healing", "Damaging"};
+
+enum
+{
+  HEALING,
+  DAMAGING
+};
+
 class Potion : public Item
 {
-  public:
-    enum
-    {
-        HEAL,
-        DAMAGE
-    };
+public:
+  Potion(string n, double w, int val, int efct, int amng);
+  int getEffect();
+  double getAmount();
+  void print();
 
-    Potion(string n, double w, int val, int efct, int amng);
-    int getEffect();
-    double getAmount();
-
-  private:
-    double amount;
-    int effect;
+private:
+  double amount;
+  int effect;
 };
 #endif

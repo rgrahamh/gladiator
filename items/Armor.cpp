@@ -21,13 +21,18 @@ int Armor::getType()
 {
     return this->type;
 }
+void Armor::print()
+{
+    cout << this->name << ":" << endl
+         << "Armor type: " << armorTypes[(this->type) - 1] << endl
+         << "Defense: " << this->defense << endl
+         << "Resiliance: " << this->resilience << endl
+         << "Value: " << this->value << endl
+         << "Weight: " << this->weight << endl;
+}
 int main()
 {
     Armor glove = Armor("Hands of Holding", 1.2, 5, 3.2, 2.4, 2);
-    cout << glove.getName() << endl
-         << "Weight: " << glove.getWeight() << endl
-         << "Value: " << glove.getValue() << endl
-         << "Defense: " << glove.getDefense() << endl
-         << "Resiliance: " << glove.getResilence() << endl;
+    glove.print();
     return 0;
 }

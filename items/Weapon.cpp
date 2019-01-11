@@ -17,13 +17,18 @@ int Weapon::getType()
 {
     return this->type;
 }
+void Weapon::print()
+{
+    cout << this->name << ":" << endl
+         << "Weapon type: " << weaponTypes[(this->type) - 1] << endl
+         << "Damage: " << this->damage << endl
+         << "Value: " << this->value << endl
+         << "Weight: " << this->weight << endl;
+}
 
 int main()
 {
     Weapon sword = Weapon("Pairing Knife", 1.5, 2, 2, 2);
-    cout << sword.getName() << endl
-         << "Weight: " << sword.getWeight() << endl
-         << "Value: " << sword.getValue() << endl
-         << "Damage: " << sword.getDamage() << endl;
+    sword.print();
     return 0;
 }

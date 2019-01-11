@@ -23,3 +23,9 @@ int Item::getValue()
 {
     return this->value;
 }
+void Item::print()
+{
+    cout << this->name << ":" << endl
+         << "Value: " << this->value << endl
+         << "Weight: " << this->weight << endl;
+}
