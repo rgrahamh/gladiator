@@ -1,10 +1,10 @@
 #include "Weapon.h"
 #include "iostream"
 
-Weapon::Weapon(string n, double w, int val, double dmg, int t) : Item(n, w, val)
+Weapon::Weapon(string n, double w, int val, double dmg, int t) : Item(n, "weapon", w, val)
 {
     this->damage = dmg;
-    this->type = t;
+    this->weaponType = t;
 }
 Weapon::~Weapon()
 {
@@ -13,14 +13,14 @@ double Weapon::getDamage()
 {
     return this->damage;
 }
-int Weapon::getType()
+int Weapon::getWeaponType()
 {
-    return this->type;
+    return this->weaponType;
 }
 void Weapon::print()
 {
     cout << this->name << ":" << endl
-         << "Weapon type: " << weaponTypes[(this->type) - 1] << endl
+         << "Weapon type: " << weaponTypes[(this->weaponType) - 1] << endl
          << "Damage: " << this->damage << endl
          << "Value: " << this->value << endl
          << "Weight: " << this->weight << endl;

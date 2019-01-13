@@ -2,19 +2,24 @@
 #define CHARACTER_H
 
 #include <string>
-#include "../races/Race.h"
+
+//Including all races
 #include "../races/Human.h"
-#include "../styles/Style.h"
+
+//Including all styles
 #include "../styles/Warrior.h"
+
 #include "../items/Armor.h"
+#include "../items/Potion.h"
 #include "../items/Weapon.h"
 
 class Character
 {
 public:
-  Character(Race race, Style style);
+  Character(string n, Race race, Style style);
   ~Character();
   void determineStats();
+  string getName();
   double getAttack();
   double getDefense();
   double getConstitution();
@@ -31,6 +36,7 @@ public:
   }
 
 private:
+  string name;
   Race race;
   Style style;
   double attack;

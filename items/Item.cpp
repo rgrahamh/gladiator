@@ -1,8 +1,9 @@
 #include "Item.h"
 
-Item::Item(string n, double w, int val)
+Item::Item(string n, string t, double w, int val)
 {
     this->name = n;
+    this->type = t;
     this->weight = w;
     this->value = val;
 }
@@ -14,6 +15,10 @@ Item::~Item()
 string Item::getName()
 {
     return this->name;
+}
+string Item::getType()
+{
+    return this->type;
 }
 double Item::getWeight()
 {

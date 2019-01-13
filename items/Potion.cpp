@@ -1,7 +1,7 @@
 #include "Potion.h"
 #include <iostream>
 
-Potion::Potion(string n, double w, int val, int efct, int amnt) : Item(n, w, val)
+Potion::Potion(string n, double w, int val, int efct, int amnt) : Item(n, "potion", w, val)
 {
     this->effect = efct;
     this->amount = amnt;

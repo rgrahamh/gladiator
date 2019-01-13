@@ -21,12 +21,12 @@ public:
   Weapon(string n, double w, int val, double dmg, int t);
   ~Weapon();
   double getDamage();
-  int getType();
+  int getWeaponType();
   void print();
 
 private:
   double damage;
-  int type;
+  int weaponType;
 };
 
 #endif
