@@ -30,9 +30,10 @@ void Armor::print()
          << "Value: " << this->value << endl
          << "Weight: " << this->weight << endl;
 }
-int main()
-{
-    Armor glove = Armor("Hands of Holding", 1.2, 5, 3.2, 2.4, 2);
-    glove.print();
-    return 0;
-}
+
+// int main()
+// {
+//     Armor glove = Armor("Hands of Holding", 1.2, 5, 3.2, 2.4, 2);
+//     glove.print();
+//     return 0;
+// }

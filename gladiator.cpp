@@ -1,10 +1,70 @@
 #define PTR_SIZE sizeof(void *)
 #include <iostream>
 #include <string>
+#include "characters/Player.h"
+#include "styles/Warrior.h"
+#include "races/Human.h"
 
 using namespace std;
 
-string getInput(string question, int isCaps = 0)
+// Constants
+enum styles { MAGE, WARRIOR, DUALFIGHTER };
+enum races  { HUMAN, DWARF, ELF };
+
+// Prototypes
+string getInput(string question, int isCaps = 0);
+Player* instantiatePlayer(int r, int s);
+
+int main()
+{
+    string name = getInput("Welcome to The Arena! Tell me, adventurer, what's your name?", 1);
+    string strStyle, strRace;
+    while (name.length() == 0)
+    {
+        name = getInput("Come on now, don't be shy! Tell me what your name is!", 1);
+    }
+    strStyle = getInput("Very well then, " + name + ". Are you a mage, a warrior, or a dualfighter?");
+    while (strStyle.compare("warrior") != 0 && strStyle.compare("mage") != 0 && strStyle.compare("dualfighter"))
+    {
+        strStyle = getInput("I've never heard of a " + strStyle + "! Are you a mage, a warrior, or a dualfighter?");
+    }
+    strRace = getInput("OK, then. What's your race?");
+    while (strRace.compare("human") != 0 && strRace.compare("dwarf") != 0 && strRace.compare("elf") != 0)
+    {
+        strRace = getInput("Don't lie to me, I can clearly tell what you aren't a " + strRace + "! Now, what race are you?");
+    }
+    cout << name << ", the " << strRace << " " << strStyle << endl;
+
+    // determine style and race
+    int s, r;
+    if(strStyle.compare("warrior") == 0) {
+        s = WARRIOR;
+    } else if(strStyle.compare("mage") == 0) {
+        s = MAGE;
+    } else if(strStyle.compare("dualfighter") == 0) {
+        s = DUALFIGHTER;
+    } else {
+        s = WARRIOR;
+    }
+
+    if(strRace.compare("human") == 0) {
+        r = HUMAN;
+    } else if(strRace.compare("dwarf") == 0) {
+        r = DWARF;
+    } else if(strRace.compare("elf") == 0) {
+        r = ELF;
+    } else {
+        r = HUMAN;
+    }
+
+    // instantiate Player
+    Player player = *instantiatePlayer(r, s);
+    cout << player.getCharacterAbilityString(player.getCharacterAbilities());
+
+    return 0;
+}
+
+string getInput(string question, int isCaps)
 {
     string input = "";
     cout << question << endl;
@@ -19,26 +79,34 @@ string getInput(string question, int isCaps = 0)
     return input;
 }
 
-int main()
+Player* instantiatePlayer(int r, int s) 
 {
-    string name = getInput("Welcome to The Arena! Tell me, adventurer, what's your name?", 1);
-    string style;
-    string race;
-    while (name.length() == 0)
-    {
-        name = getInput("Come on now, don't be shy! Tell me what your name is!");
-    }
-    style = getInput("Very well then, " + name + ". Are you a mage, a warrior, or a dualfighter?");
-    while (style.compare("warrior") != 0 && style.compare("mage") != 0 && style.compare("dualfighter"))
-    {
-        style = getInput("I've never heard of a " + style + "! Are you a mage, a warrior, or a dualfighter?");
-    }
-    race = getInput("OK, then. What's your race?");
-    while (race.compare("human") != 0 && race.compare("dwarf") != 0 && race.compare("elf") != 0)
-    {
-        race = getInput("Don't lie to me, I can clearly tell what you aren't a " + race + "! Now, what race are you?");
-    }
-    cout << name << ", the " << race << " " << style << endl;
+    Style *style;
+    Race *race;
 
-    return 0;
+    switch(s) {
+        // case MAGE:
+        //     break;
+        case WARRIOR:
+            style = new Warrior();
+            break;
+        // case DUALFIGHTER:
+        //     break;
+        default:
+            style = new Warrior();
+    }
+
+    switch(r) {
+        case HUMAN:
+            race = new Human();
+            break;
+        // case DWARF:
+        //     break;
+        // case ELF:
+        //     break;
+        default:
+            race = new Human();
+    }
+
+    return new Player(*race, *style);
 }

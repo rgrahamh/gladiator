@@ -11,7 +11,6 @@ class Warrior : public Style
 {
   public:
     Warrior();
-    string getAbilityStr(bool *ab);
 };
 
 #endif

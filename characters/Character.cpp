@@ -1,6 +1,4 @@
 #include "Character.h"
-#include "../races/Human.cpp"
-#include "../styles/Warrior.cpp"
 
 #include <iostream>
 
@@ -33,7 +31,7 @@ void Character::determineStats()
     bool characterAbils[6] = {false, false, false, false, false, false};
     for (int i = 0; i < 6; i++)
     {
-        characterAbils[i] = this->race.getAbilities()[i] && this->style.getAbilities()[i];
+        characterAbils[i] = this->race.getRaceAbilities()[i] && this->style.getStyleAbilities()[i];
     }
 
     copy(characterAbils, characterAbils + sizeof(characterAbils), this->abilities);
@@ -77,7 +75,7 @@ double Character::getLuck()
     return this->luck;
 }
 
-string Character::getAbilityStr(bool *ab)
+string Character::getCharacterAbilityString(bool *ab)
 {
     string result = "";
     (ab[0]) ? result = result + " LANCE" : result = result + "";
@@ -89,12 +87,12 @@ string Character::getAbilityStr(bool *ab)
     return result;
 }
 
-int main()
-{
-    Race r = Human();
-    Style s = Warrior();
-    Character c = Character(r, s);
+// int main()
+// {
+//     Race r = Human();
+//     Style s = Warrior();
+//     Character c = Character(r, s);
 
-    cout << "Character Health: " << c.getHealth() << endl
-         << "Character Abilities: " << c.getAbilityStr(c.getAbilities()) << endl;
-}
+//     cout << "Character Health: " << c.getHealth() << endl
+//          << "Character Abilities: " << c.getAbilityStr(c.getAbilities()) << endl;
+// }

@@ -3,7 +3,9 @@
 
 #include <string>
 #include "../races/Race.h"
+#include "../races/Human.h"
 #include "../styles/Style.h"
+#include "../styles/Warrior.h"
 #include "../items/Armor.h"
 #include "../items/Weapon.h"
 
@@ -22,8 +24,8 @@ public:
   double getSpeed();
   double getSkill();
   double getLuck();
-  string getAbilityStr(bool *ab);
-  bool *getAbilities()
+  string getCharacterAbilityString(bool *ab);
+  bool *getCharacterAbilities()
   {
     return this->abilities;
   }

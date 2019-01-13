@@ -16,7 +16,7 @@ class Player : public Character
     Armor *getGloves();
     Armor *getNecklace();
     Armor **getRings();
-    Item getItem(string itemName);
+    Item *getItem(string itemName);
     void equipItem(string itemName);
     string getItemNames();
 

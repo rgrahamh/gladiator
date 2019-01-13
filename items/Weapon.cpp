@@ -26,9 +26,9 @@ void Weapon::print()
          << "Weight: " << this->weight << endl;
 }
 
-int main()
-{
-    Weapon sword = Weapon("Pairing Knife", 1.5, 2, 2, 2);
-    sword.print();
-    return 0;
-}
+// int main()
+// {
+//     Weapon sword = Weapon("Pairing Knife", 1.5, 2, 2, 2);
+//     sword.print();
+//     return 0;
+// }

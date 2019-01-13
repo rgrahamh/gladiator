@@ -24,9 +24,9 @@ void Potion::print()
          << "Weight: " << this->weight << endl;
 }
 
-int main()
-{
-    Potion healing = Potion("Helaing Potion", 0.2, 4, 1, 25);
-    healing.print();
-    return 0;
-}
+// int main()
+// {
+//     Potion healing = Potion("Helaing Potion", 0.2, 4, 1, 25);
+//     healing.print();
+//     return 0;
+// }

@@ -11,7 +11,6 @@ class Human : public Race
 {
   public:
     Human();
-    string getAbilityStr(bool *ab);
 };
 
 #endif

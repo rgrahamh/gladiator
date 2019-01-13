@@ -21,14 +21,15 @@ public:
   double getSpeed();
   double getSkill();
   double getLuck();
-  bool *getAbilities()
+  bool *getRaceAbilities()
   {
     return this->abilities;
   }
-  void setAbilities(bool *ab)
+  void setRaceAbilities(bool *ab)
   {
     copy(ab, ab + sizeof(ab), this->abilities);
   }
+  string getRaceAbilityStr(bool *ab);
 
 private:
   enum abils

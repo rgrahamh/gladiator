@@ -1,6 +1,6 @@
 #include "Player.h"
 
-Player::Player(Race race, Style style) : Character(race, style)
+Player::Player(Race race, Style style): Character(race, style)
 {
     inventory = (slot *)malloc(sizeof(slot) * 256);
     memset(inventory, 0, sizeof(slot) * 256);
@@ -35,17 +35,20 @@ Armor **Player::getRings()
 {
     return equipped.rings;
 };
-Item Player::getItem(string itemName)
+Item* Player::getItem(string itemName)
 {
     for (int i = 0; i < 256; i++)
     {
         if (itemName.compare(inventory[i].item.getName()))
         {
-            return inventory[i].item;
+            return &inventory[i].item;
         }
     }
+    return NULL;
 }
-void equipItem(string itemName)
-{
-}
-string getItemNames();
+// void equipItem(string itemName)
+// {
+// }
+// string getItemNames()
+// {
+// };

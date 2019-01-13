@@ -21,14 +21,15 @@ class Style
     double getSpeed();
     double getSkill();
     double getLuck();
-    bool *getAbilities()
+    bool *getStyleAbilities()
     {
         return this->abilities;
     }
-    void setAbilities(bool *ab)
+    void setStyleAbilities(bool *ab)
     {
         copy(ab, ab + sizeof(ab), this->abilities);
     }
+    string getStyleAbilityStr(bool *ab);
 
   private:
     enum abils
