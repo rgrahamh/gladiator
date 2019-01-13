@@ -1,10 +1,10 @@
 #include "Armor.h"
 
-Armor::Armor(string n, double w, int val, double def, double res, int t) : Item(n, w, val)
+Armor::Armor(string n, double w, int val, double def, double res, int t) : Item(n, "armor", w, val)
 {
     this->defense = def;
     this->resilience = res;
-    this->type = t;
+    this->armorType = t;
 }
 Armor::~Armor()
 {
@@ -17,14 +17,14 @@ double Armor::getResilence()
 {
     return this->resilience;
 }
-int Armor::getType()
+int Armor::getArmorType()
 {
-    return this->type;
+    return this->armorType;
 }
 void Armor::print()
 {
     cout << this->name << ":" << endl
-         << "Armor type: " << armorTypes[(this->type) - 1] << endl
+         << "Armor type: " << armorTypes[(this->armorType) - 1] << endl
          << "Defense: " << this->defense << endl
          << "Resiliance: " << this->resilience << endl
          << "Value: " << this->value << endl

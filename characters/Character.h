@@ -2,11 +2,15 @@
 #define CHARACTER_H
 
 #include <string>
-#include "../races/Race.h"
+
+//Including all races
 #include "../races/Human.h"
-#include "../styles/Style.h"
+
+//Including all styles
 #include "../styles/Warrior.h"
+
 #include "../items/Armor.h"
+#include "../items/Potion.h"
 #include "../items/Weapon.h"
 
 class Character

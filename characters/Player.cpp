@@ -1,6 +1,4 @@
 #include "Player.h"
-#include "../races/Human.h"
-#include "../styles/Warrior.h"
 
 Player::Player(string n, Race race, Style style) : Character(n, race, style)
 {
@@ -11,7 +9,14 @@ Player::Player(string n, Race race, Style style) : Character(n, race, style)
 Player::~Player()
 {
     free(inventory);
-    free(&equipped);
+}
+Weapon *Player::getOnHand()
+{
+    return equipped.onHand;
+}
+Weapon *Player::getOffHand()
+{
+    return equipped.offHand;
 }
 Armor *Player::getHelmet()
 {
@@ -41,76 +46,104 @@ Item *Player::getItem(string itemName)
 {
     for (int i = 0; i < 256; i++)
     {
-        if (itemName.compare(inventory[i].item.getName()))
+        if (inventory[i].item != NULL && itemName.compare(inventory[i].item->getName()) == 0)
         {
-            return &(inventory[i].item);
+            return inventory[i].item;
         }
     }
+    //cout << "Item " << itemName << " not found" << endl;
     return NULL;
 }
-void Player::equipArmor(string itemName, int slot = 0)
+int Player::getItemIndex(string itemName)
 {
-    Armor *newArmor = (Armor *)(getItem(itemName));
-
-    if (newArmor == NULL)
+    for (int i = 0; i < 256; i++)
+    {
+        if (inventory[i].item != NULL && itemName.compare(inventory[i].item->getName()) == 0)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+int Player::equipItem(string itemName, int slot = 0)
+{
+    Item *newItem = getItem(itemName);
+    cout << newItem << endl;
+    if ((newItem->getType()).compare("weapon") == 0)
+    {
+        cout << "Equipping weapon..." << endl;
+        equipWeapon((Weapon *)newItem, slot);
+    }
+    else if ((newItem->getType()).compare("armor") == 0)
+    {
+        equipArmor((Armor *)newItem, slot);
+    }
+    else
+    {
+        cout << "Unsuccessful at equipping the item!" << endl;
+        return 1;
+    }
+    cout << "Successful at equipping the item!" << endl;
+    return 0;
+}
+void Player::equipArmor(Armor *armor, int slot = 0)
+{
+    if (armor == NULL)
     {
         return;
     }
 
-    switch ((*newArmor).getType())
+    switch ((*armor).getArmorType())
     {
     case (HELMET):
-        this->equipped.helmet = newArmor;
+        this->equipped.helmet = armor;
         break;
     case (GLOVES):
-        this->equipped.gloves = newArmor;
+        this->equipped.gloves = armor;
         break;
     case (BOOTS):
-        this->equipped.boots = newArmor;
+        this->equipped.boots = armor;
         break;
     case (CHEST):
-        this->equipped.boots = newArmor;
+        this->equipped.boots = armor;
         break;
     case (PANTS):
-        this->equipped.boots = newArmor;
+        this->equipped.boots = armor;
         break;
     case (NECKLACE):
-        this->equipped.necklace = newArmor;
+        this->equipped.necklace = armor;
         break;
     case (RING):
-        this->equipped.rings[slot] = newArmor;
+        this->equipped.rings[slot] = armor;
     }
 }
-void Player::equipWeapon(string itemName, int hand = 0)
+void Player::equipWeapon(Weapon *weapon, int hand = 0)
 {
-    Weapon *newWeapon = (Weapon *)(getItem(itemName));
-
-    if (newWeapon == NULL)
+    if (weapon == NULL)
     {
         return;
     }
 
     if (hand == 0)
     {
-        equipped.onHand = newWeapon;
+        equipped.onHand = weapon;
     }
     else
     {
-        equipped.offHand = newWeapon;
+        equipped.offHand = weapon;
     }
 }
-string Player::printInventory()
+void Player::printInventory()
 {
-    cout << "Items in inventory:" << endl;
     for (int i = 0; i < 256; i++)
     {
         if (inventory[i].num != 0)
         {
-            cout << inventory[i].num << "x\t" << inventory[i].item.getName() << endl;
+            cout << inventory[i].num << "x " << inventory[i].item->getName() << endl;
         }
     }
 };
-int Player::giveItem(Item item)
+int Player::giveItem(Item *item)
 {
     for (int i = 0; i < 256; i++)
     {
@@ -118,19 +151,24 @@ int Player::giveItem(Item item)
         {
             inventory[i].item = item;
             inventory[i].num++;
+            return 1;
         }
     }
-    return 1;
+    return 0;
 }
 int main()
 {
     Race r = Human();
     Style s = Warrior();
     Player p = Player("Houck", r, s);
+    Weapon *crazySword = new Weapon("Crazy Sword", 25, 3, 75, SWORD);
+    cout << "Giving item status: " << p.giveItem(crazySword);
 
     cout << "Character Name: " << p.getName() << endl
          << "Character Health: " << p.getHealth() << endl
-         << "Character Abilities: " << p.getCharacterAbilityString(p.getCharacterAbilities()) << endl
-         << "Character inventory:" << endl
-         << p.printInventory();
+         << "Character Abilities: " << p.getCharacterAbilityString(p.getCharacterAbilities()) << endl;
+    p.printInventory();
+
+    p.equipItem("Crazy Sword", 0);
+    cout << "Equipped weapon: " << p.getOnHand()->getName() << endl;
 }

@@ -10,6 +10,8 @@ class Player : public Character
   public:
     Player(string n, Race race, Style style);
     ~Player();
+    Weapon *getOnHand();
+    Weapon *getOffHand();
     Armor *getHelmet();
     Armor *getChest();
     Armor *getPants();
@@ -17,16 +19,16 @@ class Player : public Character
     Armor *getNecklace();
     Armor **getRings();
     Item *getItem(string itemName);
-    void equipArmor(string itemName, int slot);
-    void equipWeapon(string itemName, int hand);
-    string printInventory();
-    int giveItem(Item item);
+    int getItemIndex(string itemName);
+    int equipItem(string itemName, int slot);
+    void printInventory();
+    int giveItem(Item *item);
 
   private:
     struct invSlot
     {
         int num;
-        Item item;
+        Item *item;
     } typedef slot;
     struct equippedItems
     {
@@ -43,5 +45,8 @@ class Player : public Character
 
     slot *inventory;
     equipment equipped;
+
+    void equipArmor(Armor *armor, int slot);
+    void equipWeapon(Weapon *weapon, int hand);
 };
 #endif

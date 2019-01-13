@@ -26,11 +26,11 @@ public:
   ~Armor();
   double getDefense();
   double getResilence();
-  int getType();
+  int getArmorType();
   void print();
 
 private:
-  int type;
+  int armorType;
   double defense;
   double resilience;
 };
