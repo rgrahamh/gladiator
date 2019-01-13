@@ -8,7 +8,7 @@ using namespace std;
 class Player : public Character
 {
   public:
-    Player(Race race, Style style);
+    Player(string n, Race race, Style style);
     ~Player();
     Armor *getHelmet();
     Armor *getChest();
@@ -17,8 +17,10 @@ class Player : public Character
     Armor *getNecklace();
     Armor **getRings();
     Item *getItem(string itemName);
-    void equipItem(string itemName);
-    string getItemNames();
+    void equipArmor(string itemName, int slot);
+    void equipWeapon(string itemName, int hand);
+    string printInventory();
+    int giveItem(Item item);
 
   private:
     struct invSlot
@@ -28,11 +30,13 @@ class Player : public Character
     } typedef slot;
     struct equippedItems
     {
-        Weapon *weapon;
+        Weapon *onHand;
+        Weapon *offHand;
         Armor *helmet;
+        Armor *gloves;
+        Armor *boots;
         Armor *chest;
         Armor *pants;
-        Armor *gloves;
         Armor *necklace;
         Armor **rings;
     } typedef equipment;

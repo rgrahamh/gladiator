@@ -4,10 +4,11 @@
 
 using namespace std;
 
-Character::Character(Race r, Style s)
+Character::Character(string n, Race r, Style s)
 {
     this->race = r;
     this->style = s;
+    this->name = n;
 
     this->determineStats();
 }
@@ -35,6 +36,11 @@ void Character::determineStats()
     }
 
     copy(characterAbils, characterAbils + sizeof(characterAbils), this->abilities);
+}
+
+string Character::getName()
+{
+    return this->name;
 }
 
 double Character::getAttack()
@@ -87,12 +93,11 @@ string Character::getCharacterAbilityString(bool *ab)
     return result;
 }
 
-// int main()
-// {
-//     Race r = Human();
-//     Style s = Warrior();
-//     Character c = Character(r, s);
-
+//int main()
+//{
+//    Race r = Human();
+//    Style s = Warrior();
+//    Character c = Character("Fletch", r, s);
 //     cout << "Character Health: " << c.getHealth() << endl
 //          << "Character Abilities: " << c.getAbilityStr(c.getAbilities()) << endl;
 // }

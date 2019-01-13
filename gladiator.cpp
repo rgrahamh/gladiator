@@ -8,12 +8,22 @@
 using namespace std;
 
 // Constants
-enum styles { MAGE, WARRIOR, DUALFIGHTER };
-enum races  { HUMAN, DWARF, ELF };
+enum styles
+{
+    MAGE,
+    WARRIOR,
+    DUALFIGHTER
+};
+enum races
+{
+    HUMAN,
+    DWARF,
+    ELF
+};
 
 // Prototypes
 string getInput(string question, int isCaps = 0);
-Player* instantiatePlayer(int r, int s);
+Player *instantiatePlayer(int r, int s);
 
 int main()
 {
@@ -37,23 +47,37 @@ int main()
 
     // determine style and race
     int s, r;
-    if(strStyle.compare("warrior") == 0) {
+    if (strStyle.compare("warrior") == 0)
+    {
         s = WARRIOR;
-    } else if(strStyle.compare("mage") == 0) {
+    }
+    else if (strStyle.compare("mage") == 0)
+    {
         s = MAGE;
-    } else if(strStyle.compare("dualfighter") == 0) {
+    }
+    else if (strStyle.compare("dualfighter") == 0)
+    {
         s = DUALFIGHTER;
-    } else {
+    }
+    else
+    {
         s = WARRIOR;
     }
 
-    if(strRace.compare("human") == 0) {
+    if (strRace.compare("human") == 0)
+    {
         r = HUMAN;
-    } else if(strRace.compare("dwarf") == 0) {
+    }
+    else if (strRace.compare("dwarf") == 0)
+    {
         r = DWARF;
-    } else if(strRace.compare("elf") == 0) {
+    }
+    else if (strRace.compare("elf") == 0)
+    {
         r = ELF;
-    } else {
+    }
+    else
+    {
         r = HUMAN;
     }
 
@@ -79,34 +103,36 @@ string getInput(string question, int isCaps)
     return input;
 }
 
-Player* instantiatePlayer(int r, int s) 
+Player *instantiatePlayer(int r, int s)
 {
     Style *style;
     Race *race;
 
-    switch(s) {
-        // case MAGE:
-        //     break;
-        case WARRIOR:
-            style = new Warrior();
-            break;
-        // case DUALFIGHTER:
-        //     break;
-        default:
-            style = new Warrior();
+    switch (s)
+    {
+    // case MAGE:
+    //     break;
+    case WARRIOR:
+        style = new Warrior();
+        break;
+    // case DUALFIGHTER:
+    //     break;
+    default:
+        style = new Warrior();
     }
 
-    switch(r) {
-        case HUMAN:
-            race = new Human();
-            break;
-        // case DWARF:
-        //     break;
-        // case ELF:
-        //     break;
-        default:
-            race = new Human();
+    switch (r)
+    {
+    case HUMAN:
+        race = new Human();
+        break;
+    // case DWARF:
+    //     break;
+    // case ELF:
+    //     break;
+    default:
+        race = new Human();
     }
 
-    return new Player(*race, *style);
+    return new Player("David", *race, *style);
 }
