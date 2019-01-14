@@ -1,22 +1,51 @@
 #include "Weapon.h"
 #include "iostream"
 
-Weapon::Weapon(string n, double w, int val, double dmg, int t) : Item(n, "weapon", w, val)
+/**
+ * @breif Default constructor for the Weapon class
+ * @param n The name of the weapon
+ * @param w The weight of the weapon
+ * @param val The value of the weapon
+ * @param dmg How much damage the weapon deals
+ * @param t The type of weapon
+ * @param thnd If the weapon is two-handed
+ * @return A new Weapon
+ */
+Weapon::Weapon(string n, double w, int val, double dmg, int t, bool thnd) : Item(n, w, val, WEAPON)
 {
     this->damage = dmg;
     this->weaponType = t;
+    this->twoHanded = thnd;
 }
+
+/**
+ * @breif The destructor for Weapon
+ */
 Weapon::~Weapon()
 {
 }
+
+/**
+ * @breif Returns the amount of damage that the weapon deals
+ * @return The amount of damage that the weapon deals
+ */
 double Weapon::getDamage()
 {
     return this->damage;
 }
+
+/**
+ * @breif Returns the type of weapon
+ * @greturn The type of weapon
+ */
 int Weapon::getWeaponType()
 {
     return this->weaponType;
 }
+
+/**
+ * @breif Prints information about the weapon
+ */
 void Weapon::print()
 {
     cout << this->name << ":" << endl

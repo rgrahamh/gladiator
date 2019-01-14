@@ -1,6 +1,7 @@
 #include "Item.h"
 
-Item::Item(string n, string t, double w, int val)
+Item::Item(string n, double w, int val, int t = MISC)
+
 {
     this->name = n;
     this->type = t;
@@ -16,7 +17,7 @@ string Item::getName()
 {
     return this->name;
 }
-string Item::getType()
+int Item::getType()
 {
     return this->type;
 }
