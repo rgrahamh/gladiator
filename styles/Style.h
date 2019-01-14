@@ -5,13 +5,33 @@
 
 using namespace std;
 
+#ifndef WEAPONS
+#define WEAPONS
+enum weapons
+{
+    LANCE,
+    SWORD,
+    AXE,
+    LIGHT,
+    DARK,
+    ANIMA
+};
+#endif
+
+enum styles
+{
+  WARRIOR,
+  MAGE,
+  DUALFIGHTER
+};
+
 class Style
 {
   public:
     Style();
-    Style(string t, double a, double d, double c, double r, double e, double h, double sp, double sk, double l);
+    Style(int t, double a, double d, double c, double r, double e, double h, double sp, double sk, double l);
     ~Style();
-    string getType();
+    int getType();
     double getAttack();
     double getDefense();
     double getConstitution();
@@ -26,16 +46,7 @@ class Style
     string getStyleAbilityStr(bool *ab);
 
   private:
-    enum abils
-    {
-        LANCE,
-        SWORD,
-        AXE,
-        LIGHT,
-        DARK,
-        ANIMA
-    };
-    string type;
+    int type;
     double attack;
     double defense;
     double constitution;

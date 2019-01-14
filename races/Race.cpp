@@ -10,7 +10,7 @@ Race::Race()
 
 /**
  * @brief The parameterized constructor for Race
- * @param t A string description of the race; i.e. 'human'
+ * @param t A integer enum value of the race; i.e. 'HUMAN == 0'
  * @param a A double value for attack
  * @param d A double value for defense
  * @param c A double value for constitution
@@ -22,7 +22,7 @@ Race::Race()
  * @param l A double value for luck
  * @return A pointer to a race object with desired attributes
  */
-Race::Race(string t, double a, double d, double c, double r, double e, double h, double sp, double sk, double l)
+Race::Race(int t, double a, double d, double c, double r, double e, double h, double sp, double sk, double l)
 {
     this->type = t;
     this->attack = a;
@@ -46,9 +46,9 @@ Race::~Race()
 
 /**
  * @brief The getter function for type
- * @return A string value of the race's type 
+ * @return A integer enum value of the race's type 
  */
-string Race::getType()
+int Race::getType()
 {
     return this->type;
 }
