@@ -38,7 +38,6 @@ int main()
 
     // instantiate Player
     Player player = *instantiatePlayer(pi.name, pi.race, pi.style);
-    cout << player.getCharacterAbilityString(player.getCharacterAbilities());
 
     return 0;
 }
@@ -85,11 +84,12 @@ PlayerInfo getPlayerInfo() {
     style = getStyleType(s);
     race = getRaceType(r);
 
-    return PlayerInfo {
+    PlayerInfo pi = {
         name, // name
         style, // style
         race  // race
     };
+    return pi;
 }
 
 /**
