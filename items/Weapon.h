@@ -5,7 +5,9 @@
 
 const string weaponTypes[6] = {"Lance", "Sword", "Axe", "Light", "Dark", "Anima"};
 
-enum
+#ifndef WEAPONS
+#define WEAPONS
+enum weapons
 {
   LANCE,
   SWORD,
@@ -14,6 +16,7 @@ enum
   DARK,
   ANIMA
 };
+#endif
 
 class Weapon : public Item
 {

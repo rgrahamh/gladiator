@@ -10,7 +10,7 @@ Style::Style()
 
 /**
  * @brief The parameterized constructor for Style
- * @param t A string description of the style; i.e. 'warrior'
+ * @param t A integer enum value of the style; i.e. 'WARRIOR == 0'
  * @param a A double value for attack
  * @param d A double value for defense
  * @param c A double value for constitution
@@ -22,7 +22,7 @@ Style::Style()
  * @param l A double value for luck
  * @return A pointer to a style object with desired attributes
  */
-Style::Style(string t, double a, double d, double c, double r, double e, double h, double sp, double sk, double l)
+Style::Style(int t, double a, double d, double c, double r, double e, double h, double sp, double sk, double l)
 {
     this->type = t;
     this->attack = a;
@@ -46,9 +46,9 @@ Style::~Style()
 
 /**
  * @brief The getter function for type
- * @return A string value of the style's type 
+ * @return A integer enum value of the style's type 
  */
-string Style::getType() {
+int Style::getType() {
     return this->type;
 }
 

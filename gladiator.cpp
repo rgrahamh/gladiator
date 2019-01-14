@@ -7,19 +7,6 @@
 
 using namespace std;
 
-enum styles
-{
-    MAGE,
-    WARRIOR,
-    DUALFIGHTER
-};
-enum races
-{
-    HUMAN,
-    DWARF,
-    ELF
-};
-
 struct {
     string name;
     int race;
