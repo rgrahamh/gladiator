@@ -146,6 +146,13 @@ int getRaceType(string race) {
     return r;
 }
 
+/**
+ * @brief Instantiates a new Player object
+ * @param n A string value for the Player's name
+ * @param r An integer enum value indicating the Player's race
+ * @param s An integer enum value indicating the Player's style
+ * @return A pointer to a new Player object
+ */
 Player *instantiatePlayer(string n, int r, int s)
 {
     Style *style;
