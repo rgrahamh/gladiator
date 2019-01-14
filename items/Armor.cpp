@@ -1,7 +1,7 @@
 #include "Armor.h"
 
 /**
- * @breif The parameterized constructor for Armor
+ * @brief The parameterized constructor for Armor
  * @param n The name of the piece of armor
  * @param w The weight of the piece of armor
  * @param val The value of the piece of armor
@@ -18,14 +18,14 @@ Armor::Armor(string n, double w, int val, double def, double res, int t) : Item(
 }
 
 /**
- * @breif The destructor for Armor
+ * @brief The destructor for Armor
  */
 Armor::~Armor()
 {
 }
 
 /**
- * @breif Returns the defense stat of the armor
+ * @brief Returns the defense stat of the armor
  * @return The defense stat of the armor
  */
 double Armor::getDefense()
@@ -34,7 +34,7 @@ double Armor::getDefense()
 }
 
 /**
- * @breif Returns the resilience stat of the armor
+ * @brief Returns the resilience stat of the armor
  * @return The resilience stat of the armor
  */
 double Armor::getResilence()
@@ -43,7 +43,7 @@ double Armor::getResilence()
 }
 
 /**
- * @breif Returns the type of armor
+ * @brief Returns the type of armor
  * @return The type of armor
  */
 int Armor::getArmorType()
@@ -52,7 +52,7 @@ int Armor::getArmorType()
 }
 
 /**
- * @breif Prints information about the armor
+ * @brief Prints information about the armor
  */
 void Armor::print()
 {

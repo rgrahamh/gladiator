@@ -2,7 +2,7 @@
 #include "iostream"
 
 /**
- * @breif Default constructor for the Weapon class
+ * @brief Default constructor for the Weapon class
  * @param n The name of the weapon
  * @param w The weight of the weapon
  * @param val The value of the weapon
@@ -19,14 +19,14 @@ Weapon::Weapon(string n, double w, int val, double dmg, int t, bool thnd) : Item
 }
 
 /**
- * @breif The destructor for Weapon
+ * @brief The destructor for Weapon
  */
 Weapon::~Weapon()
 {
 }
 
 /**
- * @breif Returns the amount of damage that the weapon deals
+ * @brief Returns the amount of damage that the weapon deals
  * @return The amount of damage that the weapon deals
  */
 double Weapon::getDamage()
@@ -35,7 +35,7 @@ double Weapon::getDamage()
 }
 
 /**
- * @breif Returns the type of weapon
+ * @brief Returns the type of weapon
  * @greturn The type of weapon
  */
 int Weapon::getWeaponType()
@@ -44,7 +44,7 @@ int Weapon::getWeaponType()
 }
 
 /**
- * @breif Prints information about the weapon
+ * @brief Prints information about the weapon
  */
 void Weapon::print()
 {
