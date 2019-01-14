@@ -7,7 +7,6 @@
 
 using namespace std;
 
-// Constants
 enum styles
 {
     MAGE,
@@ -27,7 +26,6 @@ struct {
     int style;
 } typedef PlayerInfo;
 
-// Prototypes
 string getInput(string question, int isCaps = 0);
 PlayerInfo getPlayerInfo();
 int getStyleType(string style);
