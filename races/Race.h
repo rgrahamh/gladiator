@@ -11,7 +11,7 @@ public:
   Race();
   Race(string t, double a, double d, double c, double r, double e, double h, double sp, double sk, double l);
   ~Race();
-  // TODO: string getType();
+  string getType();
   double getAttack();
   double getDefense();
   double getConstitution();
@@ -21,15 +21,9 @@ public:
   double getSpeed();
   double getSkill();
   double getLuck();
-  bool *getRaceAbilities()
-  {
-    return this->abilities;
-  }
-  void setRaceAbilities(bool *ab)
-  {
-    copy(ab, ab + sizeof(ab), this->abilities);
-  }
-  string getRaceAbilityStr(bool *ab);
+  bool *getRaceAbilities();
+  void setRaceAbilities(bool *ab);
+  string getRaceAbilityString(bool *ab);
 
 private:
   enum abils

@@ -7,7 +7,6 @@
 
 using namespace std;
 
-// Constants
 enum styles
 {
     MAGE,
@@ -21,7 +20,6 @@ enum races
     ELF
 };
 
-// Prototypes
 string getInput(string question, int isCaps = 0);
 Player *instantiatePlayer(int r, int s);
 
@@ -81,13 +79,18 @@ int main()
         r = HUMAN;
     }
 
-    // instantiate Player
     Player player = *instantiatePlayer(r, s);
     cout << player.getCharacterAbilityString(player.getCharacterAbilities());
 
     return 0;
 }
 
+/**
+ * @brief Returns the input string that has been sanitized by converting to lower case
+ * @param question The question to ask the player
+ * @param isCaps A boolean value that lets the function know if the returned value should be capitalized
+ * @return The string value after being sanitized
+ */
 string getInput(string question, int isCaps)
 {
     string input = "";
@@ -103,6 +106,12 @@ string getInput(string question, int isCaps)
     return input;
 }
 
+/**
+ * @brief Returns a pointer to a new Player object
+ * @param r The desired race of the player
+ * @param s The desired fighting style of the player
+ * @return A pointer to a new Player object with desired race and style 
+ */
 Player *instantiatePlayer(int r, int s)
 {
     Style *style;
