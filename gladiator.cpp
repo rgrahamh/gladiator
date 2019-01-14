@@ -21,68 +21,25 @@ enum races
     ELF
 };
 
+struct {
+    string name;
+    int race;
+    int style;
+} typedef PlayerInfo;
+
 // Prototypes
 string getInput(string question, int isCaps = 0);
-Player *instantiatePlayer(int r, int s);
+PlayerInfo getPlayerInfo();
+int getStyleType(string style);
+int getRaceType(string race);
+Player *instantiatePlayer(string n, int r, int s);
 
 int main()
 {
-    string name = getInput("Welcome to The Arena! Tell me, adventurer, what's your name?", 1);
-    string strStyle, strRace;
-    while (name.length() == 0)
-    {
-        name = getInput("Come on now, don't be shy! Tell me what your name is!", 1);
-    }
-    strStyle = getInput("Very well then, " + name + ". Are you a mage, a warrior, or a dualfighter?");
-    while (strStyle.compare("warrior") != 0 && strStyle.compare("mage") != 0 && strStyle.compare("dualfighter"))
-    {
-        strStyle = getInput("I've never heard of a " + strStyle + "! Are you a mage, a warrior, or a dualfighter?");
-    }
-    strRace = getInput("OK, then. What's your race?");
-    while (strRace.compare("human") != 0 && strRace.compare("dwarf") != 0 && strRace.compare("elf") != 0)
-    {
-        strRace = getInput("Don't lie to me, I can clearly tell what you aren't a " + strRace + "! Now, what race are you?");
-    }
-    cout << name << ", the " << strRace << " " << strStyle << endl;
-
-    // determine style and race
-    int s, r;
-    if (strStyle.compare("warrior") == 0)
-    {
-        s = WARRIOR;
-    }
-    else if (strStyle.compare("mage") == 0)
-    {
-        s = MAGE;
-    }
-    else if (strStyle.compare("dualfighter") == 0)
-    {
-        s = DUALFIGHTER;
-    }
-    else
-    {
-        s = WARRIOR;
-    }
-
-    if (strRace.compare("human") == 0)
-    {
-        r = HUMAN;
-    }
-    else if (strRace.compare("dwarf") == 0)
-    {
-        r = DWARF;
-    }
-    else if (strRace.compare("elf") == 0)
-    {
-        r = ELF;
-    }
-    else
-    {
-        r = HUMAN;
-    }
+    PlayerInfo pi = getPlayerInfo();
 
     // instantiate Player
-    Player player = *instantiatePlayer(r, s);
+    Player player = *instantiatePlayer(pi.name, pi.race, pi.style);
     cout << player.getCharacterAbilityString(player.getCharacterAbilities());
 
     return 0;
@@ -103,7 +60,95 @@ string getInput(string question, int isCaps)
     return input;
 }
 
-Player *instantiatePlayer(int r, int s)
+/**
+ * @brief Returns a struct of type PlayerInfo (containing name, style, and race) after asking the player some questions
+ * @return A struct of type PlayerInfo 
+ */
+PlayerInfo getPlayerInfo() {
+    string name = getInput("Welcome to The Arena! Tell me, adventurer, what's your name?", 1);
+    string s, r;
+    int style, race;
+    while (name.length() == 0)
+    {
+        name = getInput("Come on now, don't be shy! Tell me what your name is!", 1);
+    }
+    s = getInput("Very well then, " + name + ". Are you a mage, a warrior, or a dualfighter?");
+    while (s.compare("warrior") != 0 && s.compare("mage") != 0 && s.compare("dualfighter"))
+    {
+        s = getInput("I've never heard of a " + s + "! Are you a mage, a warrior, or a dualfighter?");
+    }
+    r = getInput("OK, then. What's your race? Are you a human, dwarf, or elf?");
+    while (r.compare("human") != 0 && r.compare("dwarf") != 0 && r.compare("elf") != 0)
+    {
+        r = getInput("Don't lie to me, I can clearly tell what you aren't a " + r + "! Now, what race are you?");
+    }
+    cout << name << ", the " << r << " " << s << endl;
+
+    style = getStyleType(s);
+    race = getRaceType(r);
+
+    return PlayerInfo {
+        name, // name
+        style, // style
+        race  // race
+    };
+}
+
+/**
+ * @brief A conversion from the string for a style into it's enum equivalent
+ * @param style A string value indicating the style
+ * @return The desired enumeration value for style
+ */
+int getStyleType(string style) {
+    int s;
+    if (style.compare("warrior") == 0)
+    {
+        s = WARRIOR;
+    }
+    else if (style.compare("mage") == 0)
+    {
+        s = MAGE;
+    }
+    else if (style.compare("dualfighter") == 0)
+    {
+        s = DUALFIGHTER;
+    }
+    else
+    {
+        s = WARRIOR;
+    }
+
+    return s;
+}
+
+/**
+ * @brief A conversion from the string for a race into it's enum equivalent
+ * @param style A string value indicating the race
+ * @return The desired enumeration value for race
+ */
+int getRaceType(string race) {
+    int r;
+    if (race.compare("human") == 0)
+    {
+        r = HUMAN;
+    }
+    else if (race.compare("dwarf") == 0)
+    {
+        r = DWARF;
+    }
+    else if (race.compare("elf") == 0)
+    {
+        r = ELF;
+    }
+    else
+    {
+        r = HUMAN;
+    }
+
+    return r;
+}
+
+Player *instantiatePlayer(string n, int r, int s)
 {
     Style *style;
     Race *race;
@@ -134,5 +179,5 @@ Player *instantiatePlayer(int r, int s)
         race = new Human();
     }
 
-    return new Player("David", *race, *style);
+    return new Player(n, *race, *style);
 }
