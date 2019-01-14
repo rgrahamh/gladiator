@@ -16,6 +16,10 @@ Character::Character(string n, Race r, Style s)
     this->style = s;
     this->name = n;
 
+    inventory = (slot *)malloc(sizeof(slot) * 256);
+    memset(inventory, 0, sizeof(slot) * 256);
+    memset(&equipped, 0, sizeof(equippedItems));
+
     this->determineStats();
 }
 
@@ -24,6 +28,7 @@ Character::Character(string n, Race r, Style s)
  */
 Character::~Character()
 {
+    free(inventory);
 }
 
 /**
@@ -155,6 +160,212 @@ string Character::getCharacterAbilityString(bool *ab)
     (ab[4]) ? result = result + " DARK" : result = result + "";
     (ab[5]) ? result = result + " ANIMA" : result = result + "";
     return result;
+}
+
+/**
+ * @brief Returns a pointer to the on-hand weapon
+ * @return A pointer to the on-hand weapon
+ */
+Weapon *Character::getOnHand()
+{
+    return equipped.onHand;
+}
+
+/**
+ * @brief Returns a pointer to the character's off-hand weapon
+ * @return A pointer to the off-hand weapon
+ */
+Weapon *Character::getOffHand()
+{
+    return equipped.offHand;
+}
+
+/**
+ * @brief Returns a pointer to the character's off-hand weapon
+ * @return A pointer to the off-hand weapon
+ */
+Armor *Character::getHelmet()
+{
+    return equipped.helmet;
+}
+
+/**
+ * @brief Returns a pointer to the character's chest armor
+ * @return A pointer to the character's chest armor
+ */
+Armor *Character::getChest()
+{
+    return equipped.chest;
+}
+
+/**
+ * @brief Returns a pointer to the character's pants
+ * @return A pointer to the character's pants
+ */
+Armor *Character::getPants()
+{
+    return equipped.pants;
+}
+
+/**
+ * @brief Returns a pointer to the character's gloves
+ * @return A pointer to the character's gloves
+ */
+Armor *Character::getGloves()
+{
+    return equipped.gloves;
+}
+
+/**
+ * @brief Returns a pointer to the character's necklace
+ * @return A pointer to the character's necklace
+ */
+Armor *Character::getNecklace()
+{
+    return equipped.necklace;
+}
+
+/**
+ * @brief Returns a pointer to an array of the character's rings
+ * @return A pointer to an array of the character's rings
+ */
+Armor **Character::getRings()
+{
+    return equipped.rings;
+};
+
+/**
+ * @breif Returns a pointer to an item in inventory if an item of specified name exists in inventory, return NULL otherwise
+ * @param itemName The name of the item being searched for
+ * @return A pointer to the specified item if found, otherwise NULL
+ */
+Item *Character::getItem(string itemName)
+{
+    for (int i = 0; i < 256; i++)
+    {
+        if (inventory[i].item != NULL && itemName.compare(inventory[i].item->getName()) == 0)
+        {
+            return inventory[i].item;
+        }
+    }
+    //cout << "Item " << itemName << " not found" << endl;
+    return NULL;
+}
+
+/**
+ * @breif Equips an item of the specified name (if found in inventory) to the applicable slot/hand
+ * @param itemName The name of the item being equipped
+ * @param slot The slot that the item is being equipped to (use for rings and on-hand (0) or off-hand (1) weapons)
+ * @return 0 if successful, -1 if the item could not be equipped.
+ */
+int Character::equipItem(string itemName, int slot = 0)
+{
+    Item *newItem = getItem(itemName);
+    if (newItem != NULL && (newItem->getType()) == WEAPON)
+    {
+        equipWeapon((Weapon *)newItem, slot);
+    }
+    else if (newItem != NULL && (newItem->getType()) == ARMOR)
+    {
+        equipArmor((Armor *)newItem, slot);
+    }
+    else
+    {
+        return -1;
+    }
+    return 0;
+}
+
+/**
+ * @breif Equips the specified weapon to the user
+ * @param armor A pointer to the armor being equipped
+ * @param slot The slot that the armor is being equpped to (default 0)
+ */
+void Character::equipArmor(Armor *armor, int slot = 0)
+{
+    if (armor == NULL)
+    {
+        return;
+    }
+
+    switch ((*armor).getArmorType())
+    {
+    case (HELMET):
+        this->equipped.helmet = armor;
+        break;
+    case (GLOVES):
+        this->equipped.gloves = armor;
+        break;
+    case (BOOTS):
+        this->equipped.boots = armor;
+        break;
+    case (CHEST):
+        this->equipped.boots = armor;
+        break;
+    case (PANTS):
+        this->equipped.boots = armor;
+        break;
+    case (NECKLACE):
+        this->equipped.necklace = armor;
+        break;
+    case (RING):
+        this->equipped.rings[slot] = armor;
+    }
+}
+
+/**
+ * @breif Equips the specified weapon to the user
+ * @param armor A pointer to the weapon being equipped
+ * @param slot The slot that the weapon is being equpped to (default 0)
+ */
+void Character::equipWeapon(Weapon *weapon, int hand = 0)
+{
+    if (weapon == NULL)
+    {
+        return;
+    }
+
+    if (hand == 0)
+    {
+        equipped.onHand = weapon;
+    }
+    else
+    {
+        equipped.offHand = weapon;
+    }
+}
+
+/**
+ * @breif Prints the character's inventory
+ */
+void Character::printInventory()
+{
+    for (int i = 0; i < 256; i++)
+    {
+        if (inventory[i].num != 0)
+        {
+            cout << inventory[i].num << "x " << inventory[i].item->getName() << endl;
+        }
+    }
+};
+
+/**
+ * @breif Gives the character an item
+ * @param item The item being given to the character
+ * @return 0 if successful, -1 if inventory is full
+ */
+int Character::giveItem(Item *item)
+{
+    for (int i = 0; i < 256; i++)
+    {
+        if (inventory[i].num == 0)
+        {
+            inventory[i].item = item;
+            inventory[i].num++;
+            return 0;
+        }
+    }
+    return -1;
 }
 
 //int main()
