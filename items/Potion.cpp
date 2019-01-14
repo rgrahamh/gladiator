@@ -7,7 +7,7 @@
  * @param w The weight of the potion
  * @param val The value of the potion
  * @param efct The effect caused by the potion
- * @param amnt The amount of <effect> that the potion does
+ * @param amnt The amount of {effect} that the potion does
  * @return A new potion
  */
 Potion::Potion(string n, double w, int val, int efct, int amnt) : Item(n, w, val, POTION)

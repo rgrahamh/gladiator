@@ -5,6 +5,10 @@
 
 using namespace std;
 
+/**
+ * @class Player <Player.h>
+ * @brief A class to describe a particular character who fights enemies
+ */ 
 class Player : public Character
 {
   public:

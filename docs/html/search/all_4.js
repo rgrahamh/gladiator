@@ -35,5 +35,5 @@ var searchData=
   ['getweapontype',['getWeaponType',['../class_weapon.html#ae801d0c42caf03432c4c97dfca48c88c',1,'Weapon']]],
   ['getweight',['getWeight',['../class_item.html#ada983fd5602c02f2ec2bc86401b2355e',1,'Item']]],
   ['giveitem',['giveItem',['../class_character.html#a88d219c54c93f65ead5a66545c7ebf87',1,'Character']]],
-  ['gladiator',['Gladiator',['../md__r_e_a_d_m_e.html',1,'']]]
+  ['gladiator',['Gladiator',['../md___users_dtfletch__personal__projects_gladiator__r_e_a_d_m_e.html',1,'']]]
 ];

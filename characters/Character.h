@@ -14,6 +14,10 @@
 #include "../items/Potion.h"
 #include "../items/Weapon.h"
 
+/**
+ * @class Character <Character.h>
+ * @brief A class to describe a player or enemy
+ */ 
 class Character
 {
 public:
