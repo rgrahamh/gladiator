@@ -43,10 +43,7 @@ public:
   void printInventory();
   int giveItem(Item *item);
   string getCharacterAbilityString(bool *ab);
-  bool *getCharacterAbilities()
-  {
-    return this->abilities;
-  }
+  bool *getCharacterAbilities();
 
 private:
   struct invSlot

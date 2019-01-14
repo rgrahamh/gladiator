@@ -33,8 +33,8 @@ int Potion::getEffect()
 }
 
 /**
- * @brief Returns the amount of <effect> that the potion does
- * @return The amount of <effect> that the potion does
+ * @brief Returns the amount of {effect} that the potion does
+ * @return The amount of {effect} that the potion does
  */
 double Potion::getAmount()
 {

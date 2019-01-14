@@ -36,7 +36,7 @@ double Weapon::getDamage()
 
 /**
  * @brief Returns the type of weapon
- * @greturn The type of weapon
+ * @return The type of weapon
  */
 int Weapon::getWeaponType()
 {
