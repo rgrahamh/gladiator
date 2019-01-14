@@ -5,7 +5,7 @@
 using namespace std;
 
 /**
- * @breif The parameterized constructor for the Character class
+ * @brief The parameterized constructor for the Character class
  * @param n The name of the character
  * @param r The race of the character
  * @param s The style of the character
@@ -24,7 +24,7 @@ Character::Character(string n, Race r, Style s)
 }
 
 /**
- * @breif The destructor for the Character class
+ * @brief The destructor for the Character class
  */
 Character::~Character()
 {
@@ -32,7 +32,7 @@ Character::~Character()
 }
 
 /**
- * @breif Determines the stats of a character
+ * @brief Determines the stats of a character
  */
 void Character::determineStats()
 {
@@ -56,7 +56,7 @@ void Character::determineStats()
 }
 
 /**
- * @breif Returns the name of the character
+ * @brief Returns the name of the character
  * @return The name of the character
  */
 string Character::getName()
@@ -65,7 +65,7 @@ string Character::getName()
 }
 
 /**
- * @breif Returns the attack of the character
+ * @brief Returns the attack of the character
  * @return The attack of the character
  */
 double Character::getAttack()
@@ -74,7 +74,7 @@ double Character::getAttack()
 }
 
 /**
- * @breif Returns the defense of the character
+ * @brief Returns the defense of the character
  * @return The defense of the character
  */
 double Character::getDefense()
@@ -83,7 +83,7 @@ double Character::getDefense()
 }
 
 /**
- * @breif Returns the constitution of the character
+ * @brief Returns the constitution of the character
  * @return The constitution of the character
  */
 double Character::getConstitution()
@@ -92,7 +92,7 @@ double Character::getConstitution()
 }
 
 /**
- * @breif Returns the resilience of the character
+ * @brief Returns the resilience of the character
  * @return The resilience of the character
  */
 double Character::getResilience()
@@ -101,7 +101,7 @@ double Character::getResilience()
 }
 
 /**
- * @breif Returns the energy of the character
+ * @brief Returns the energy of the character
  * @return the energy of the character
  */
 double Character::getEnergy()
@@ -110,7 +110,7 @@ double Character::getEnergy()
 }
 
 /**
- * @breif Returns the health of the character
+ * @brief Returns the health of the character
  * @return The health of the character
  */
 double Character::getHealth()
@@ -119,7 +119,7 @@ double Character::getHealth()
 }
 
 /**
- * @breif Returns the speed of the character
+ * @brief Returns the speed of the character
  * @return The speed of the character
  */
 double Character::getSpeed()
@@ -128,7 +128,7 @@ double Character::getSpeed()
 }
 
 /**
- * @breif Returns the skill of the character
+ * @brief Returns the skill of the character
  * @return The skill of the character
  */
 double Character::getSkill()
@@ -137,7 +137,7 @@ double Character::getSkill()
 }
 
 /**
- * @breif Returns the luck of the character
+ * @brief Returns the luck of the character
  * @return The luck of the character
  */
 double Character::getLuck()
@@ -146,7 +146,7 @@ double Character::getLuck()
 }
 
 /**
- * @breif Returns a string representation of the abilities that the character possesses
+ * @brief Returns a string representation of the abilities that the character possesses
  * @param ab The bool array of the character's abilities
  * @return The string representation of all of the character's abilities
  */
@@ -235,7 +235,7 @@ Armor **Character::getRings()
 };
 
 /**
- * @breif Returns a pointer to an item in inventory if an item of specified name exists in inventory, return NULL otherwise
+ * @brief Returns a pointer to an item in inventory if an item of specified name exists in inventory, return NULL otherwise
  * @param itemName The name of the item being searched for
  * @return A pointer to the specified item if found, otherwise NULL
  */
@@ -253,7 +253,7 @@ Item *Character::getItem(string itemName)
 }
 
 /**
- * @breif Equips an item of the specified name (if found in inventory) to the applicable slot/hand
+ * @brief Equips an item of the specified name (if found in inventory) to the applicable slot/hand
  * @param itemName The name of the item being equipped
  * @param slot The slot that the item is being equipped to (use for rings and on-hand (0) or off-hand (1) weapons)
  * @return 0 if successful, -1 if the item could not be equipped.
@@ -277,7 +277,7 @@ int Character::equipItem(string itemName, int slot = 0)
 }
 
 /**
- * @breif Equips the specified weapon to the user
+ * @brief Equips the specified weapon to the user
  * @param armor A pointer to the armor being equipped
  * @param slot The slot that the armor is being equpped to (default 0)
  */
@@ -314,7 +314,7 @@ void Character::equipArmor(Armor *armor, int slot = 0)
 }
 
 /**
- * @breif Equips the specified weapon to the user
+ * @brief Equips the specified weapon to the user
  * @param armor A pointer to the weapon being equipped
  * @param slot The slot that the weapon is being equpped to (default 0)
  */
@@ -336,7 +336,7 @@ void Character::equipWeapon(Weapon *weapon, int hand = 0)
 }
 
 /**
- * @breif Prints the character's inventory
+ * @brief Prints the character's inventory
  */
 void Character::printInventory()
 {
@@ -350,7 +350,7 @@ void Character::printInventory()
 };
 
 /**
- * @breif Gives the character an item
+ * @brief Gives the character an item
  * @param item The item being given to the character
  * @return 0 if successful, -1 if inventory is full
  */

@@ -1,0 +1,408 @@
+\hypertarget{class_character}{}\section{Character Class Reference}
+\label{class_character}\index{Character@{Character}}
+Inheritance diagram for Character\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_character}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_character_a71950bfb551c8e3ab688156808286331}{Character}} (string n, \mbox{\hyperlink{class_race}{Race}} race, \mbox{\hyperlink{class_style}{Style}} style)
+\begin{DoxyCompactList}\small\item\em The parameterized constructor for the \mbox{\hyperlink{class_character}{Character}} class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_character_a9e9be564d05ded80962b2045aa70b3fc}\label{class_character_a9e9be564d05ded80962b2045aa70b3fc}} 
+\mbox{\hyperlink{class_character_a9e9be564d05ded80962b2045aa70b3fc}{$\sim$\+Character}} ()
+\begin{DoxyCompactList}\small\item\em The destructor for the \mbox{\hyperlink{class_character}{Character}} class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_character_a6f933f9865269a0302297f6b50c5e636}\label{class_character_a6f933f9865269a0302297f6b50c5e636}} 
+void \mbox{\hyperlink{class_character_a6f933f9865269a0302297f6b50c5e636}{determine\+Stats}} ()
+\begin{DoxyCompactList}\small\item\em Determines the stats of a character. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_character_ac2277578bac771149e518e3d5652807c}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Returns the name of the character. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_character_a10103c3d082351807a06dc758b49ca4e}{get\+Attack}} ()
+\begin{DoxyCompactList}\small\item\em Returns the attack of the character. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_character_a9cfa4e4ca2a08b794c3b6c463d2d57b0}{get\+Defense}} ()
+\begin{DoxyCompactList}\small\item\em Returns the defense of the character. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_character_a8220740f682216e2205a17a93da24da5}{get\+Constitution}} ()
+\begin{DoxyCompactList}\small\item\em Returns the constitution of the character. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_character_a2fa72a1a71a2009ce3f41addd17b3ee8}{get\+Resilience}} ()
+\begin{DoxyCompactList}\small\item\em Returns the resilience of the character. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_character_add3abc151041b4887ec4b1c0d7387067}{get\+Energy}} ()
+\begin{DoxyCompactList}\small\item\em Returns the energy of the character. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_character_a959689a61e590767de24d58c68d68eaa}{get\+Health}} ()
+\begin{DoxyCompactList}\small\item\em Returns the health of the character. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_character_a8e0bfcc02cbf60b5f466b4e8daa9ab8c}{get\+Speed}} ()
+\begin{DoxyCompactList}\small\item\em Returns the speed of the character. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_character_a646f45c59a8b2a5d48e7e83722ebeaa6}{get\+Skill}} ()
+\begin{DoxyCompactList}\small\item\em Returns the skill of the character. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_character_afe5886a4e21bf06cc44eef1f18e85ad6}{get\+Luck}} ()
+\begin{DoxyCompactList}\small\item\em Returns the luck of the character. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_weapon}{Weapon}} $\ast$ \mbox{\hyperlink{class_character_a91d2c56e020fe4e0b9231fd2b3da2ef4}{get\+On\+Hand}} ()
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the on-\/hand weapon. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_weapon}{Weapon}} $\ast$ \mbox{\hyperlink{class_character_a3e789de343597dfdf68b4aa45d537878}{get\+Off\+Hand}} ()
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the character\textquotesingle{}s off-\/hand weapon. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_armor}{Armor}} $\ast$ \mbox{\hyperlink{class_character_a4e4cb7d3a8fb615db8f4a8c6543c447f}{get\+Helmet}} ()
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the character\textquotesingle{}s off-\/hand weapon. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_armor}{Armor}} $\ast$ \mbox{\hyperlink{class_character_a5bdf09759593911af55ce0a9f9f7959f}{get\+Chest}} ()
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the character\textquotesingle{}s chest armor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_armor}{Armor}} $\ast$ \mbox{\hyperlink{class_character_a201f089787a3b1b1b6c8aa15677f5eb0}{get\+Pants}} ()
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the character\textquotesingle{}s pants. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_armor}{Armor}} $\ast$ \mbox{\hyperlink{class_character_ab16921d24cd1846676b6774c2de50c67}{get\+Gloves}} ()
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the character\textquotesingle{}s gloves. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_armor}{Armor}} $\ast$ \mbox{\hyperlink{class_character_a8e5929a6b0405a011b2055a25e7ef41f}{get\+Necklace}} ()
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the character\textquotesingle{}s necklace. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_armor}{Armor}} $\ast$$\ast$ \mbox{\hyperlink{class_character_ac75aeb066ce431010649333f3b8fae79}{get\+Rings}} ()
+\begin{DoxyCompactList}\small\item\em Returns a pointer to an array of the character\textquotesingle{}s rings. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_item}{Item}} $\ast$ \mbox{\hyperlink{class_character_aff695a0c7cbea72f60fcaf37922bca29}{get\+Item}} (string item\+Name)
+\begin{DoxyCompactList}\small\item\em Returns a pointer to an item in inventory if an item of specified name exists in inventory, return N\+U\+LL otherwise. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_character_a4f453590cc77d43ee5c55eed246607b0}{equip\+Item}} (string item\+Name, int slot)
+\begin{DoxyCompactList}\small\item\em Equips an item of the specified name (if found in inventory) to the applicable slot/hand. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_character_af00c9f919520e668d77208e615322dc6}\label{class_character_af00c9f919520e668d77208e615322dc6}} 
+void \mbox{\hyperlink{class_character_af00c9f919520e668d77208e615322dc6}{print\+Inventory}} ()
+\begin{DoxyCompactList}\small\item\em Prints the character\textquotesingle{}s inventory. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_character_a88d219c54c93f65ead5a66545c7ebf87}{give\+Item}} (\mbox{\hyperlink{class_item}{Item}} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Gives the character an item. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_character_ad1e769bb07c97c93de648fca312caef0}{get\+Character\+Ability\+String}} (bool $\ast$ab)
+\begin{DoxyCompactList}\small\item\em Returns a string representation of the abilities that the character possesses. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_character_ab0da0c3b5d3125e233737685d84d20c2}\label{class_character_ab0da0c3b5d3125e233737685d84d20c2}} 
+bool $\ast$ {\bfseries get\+Character\+Abilities} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_character_a71950bfb551c8e3ab688156808286331}\label{class_character_a71950bfb551c8e3ab688156808286331}} 
+\index{Character@{Character}!Character@{Character}}
+\index{Character@{Character}!Character@{Character}}
+\subsubsection{\texorpdfstring{Character()}{Character()}}
+{\footnotesize\ttfamily Character\+::\+Character (\begin{DoxyParamCaption}\item[{string}]{n,  }\item[{\mbox{\hyperlink{class_race}{Race}}}]{r,  }\item[{\mbox{\hyperlink{class_style}{Style}}}]{s }\end{DoxyParamCaption})}
+
+
+
+The parameterized constructor for the \mbox{\hyperlink{class_character}{Character}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The name of the character \\
+\hline
+{\em r} & The race of the character \\
+\hline
+{\em s} & The style of the character \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_character_a4f453590cc77d43ee5c55eed246607b0}\label{class_character_a4f453590cc77d43ee5c55eed246607b0}} 
+\index{Character@{Character}!equipItem@{equipItem}}
+\index{equipItem@{equipItem}!Character@{Character}}
+\subsubsection{\texorpdfstring{equipItem()}{equipItem()}}
+{\footnotesize\ttfamily int Character\+::equip\+Item (\begin{DoxyParamCaption}\item[{string}]{item\+Name,  }\item[{int}]{slot = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Equips an item of the specified name (if found in inventory) to the applicable slot/hand. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\+Name} & The name of the item being equipped \\
+\hline
+{\em slot} & The slot that the item is being equipped to (use for rings and on-\/hand (0) or off-\/hand (1) weapons) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, -\/1 if the item could not be equipped. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_character_a10103c3d082351807a06dc758b49ca4e}\label{class_character_a10103c3d082351807a06dc758b49ca4e}} 
+\index{Character@{Character}!getAttack@{getAttack}}
+\index{getAttack@{getAttack}!Character@{Character}}
+\subsubsection{\texorpdfstring{getAttack()}{getAttack()}}
+{\footnotesize\ttfamily double Character\+::get\+Attack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the attack of the character. 
+
+\begin{DoxyReturn}{Returns}
+The attack of the character 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_character_ad1e769bb07c97c93de648fca312caef0}\label{class_character_ad1e769bb07c97c93de648fca312caef0}} 
+\index{Character@{Character}!getCharacterAbilityString@{getCharacterAbilityString}}
+\index{getCharacterAbilityString@{getCharacterAbilityString}!Character@{Character}}
+\subsubsection{\texorpdfstring{getCharacterAbilityString()}{getCharacterAbilityString()}}
+{\footnotesize\ttfamily string Character\+::get\+Character\+Ability\+String (\begin{DoxyParamCaption}\item[{bool $\ast$}]{ab }\end{DoxyParamCaption})}
+
+
+
+Returns a string representation of the abilities that the character possesses. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ab} & The bool array of the character\textquotesingle{}s abilities \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The string representation of all of the character\textquotesingle{}s abilities 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_character_a5bdf09759593911af55ce0a9f9f7959f}\label{class_character_a5bdf09759593911af55ce0a9f9f7959f}} 
+\index{Character@{Character}!getChest@{getChest}}
+\index{getChest@{getChest}!Character@{Character}}
+\subsubsection{\texorpdfstring{getChest()}{getChest()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_armor}{Armor}} $\ast$ Character\+::get\+Chest (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a pointer to the character\textquotesingle{}s chest armor. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the character\textquotesingle{}s chest armor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_character_a8220740f682216e2205a17a93da24da5}\label{class_character_a8220740f682216e2205a17a93da24da5}} 
+\index{Character@{Character}!getConstitution@{getConstitution}}
+\index{getConstitution@{getConstitution}!Character@{Character}}
+\subsubsection{\texorpdfstring{getConstitution()}{getConstitution()}}
+{\footnotesize\ttfamily double Character\+::get\+Constitution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the constitution of the character. 
+
+\begin{DoxyReturn}{Returns}
+The constitution of the character 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_character_a9cfa4e4ca2a08b794c3b6c463d2d57b0}\label{class_character_a9cfa4e4ca2a08b794c3b6c463d2d57b0}} 
+\index{Character@{Character}!getDefense@{getDefense}}
+\index{getDefense@{getDefense}!Character@{Character}}
+\subsubsection{\texorpdfstring{getDefense()}{getDefense()}}
+{\footnotesize\ttfamily double Character\+::get\+Defense (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the defense of the character. 
+
+\begin{DoxyReturn}{Returns}
+The defense of the character 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_character_add3abc151041b4887ec4b1c0d7387067}\label{class_character_add3abc151041b4887ec4b1c0d7387067}} 
+\index{Character@{Character}!getEnergy@{getEnergy}}
+\index{getEnergy@{getEnergy}!Character@{Character}}
+\subsubsection{\texorpdfstring{getEnergy()}{getEnergy()}}
+{\footnotesize\ttfamily double Character\+::get\+Energy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the energy of the character. 
+
+\begin{DoxyReturn}{Returns}
+the energy of the character 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_character_ab16921d24cd1846676b6774c2de50c67}\label{class_character_ab16921d24cd1846676b6774c2de50c67}} 
+\index{Character@{Character}!getGloves@{getGloves}}
+\index{getGloves@{getGloves}!Character@{Character}}
+\subsubsection{\texorpdfstring{getGloves()}{getGloves()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_armor}{Armor}} $\ast$ Character\+::get\+Gloves (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a pointer to the character\textquotesingle{}s gloves. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the character\textquotesingle{}s gloves 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_character_a959689a61e590767de24d58c68d68eaa}\label{class_character_a959689a61e590767de24d58c68d68eaa}} 
+\index{Character@{Character}!getHealth@{getHealth}}
+\index{getHealth@{getHealth}!Character@{Character}}
+\subsubsection{\texorpdfstring{getHealth()}{getHealth()}}
+{\footnotesize\ttfamily double Character\+::get\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the health of the character. 
+
+\begin{DoxyReturn}{Returns}
+The health of the character 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_character_a4e4cb7d3a8fb615db8f4a8c6543c447f}\label{class_character_a4e4cb7d3a8fb615db8f4a8c6543c447f}} 
+\index{Character@{Character}!getHelmet@{getHelmet}}
+\index{getHelmet@{getHelmet}!Character@{Character}}
+\subsubsection{\texorpdfstring{getHelmet()}{getHelmet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_armor}{Armor}} $\ast$ Character\+::get\+Helmet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a pointer to the character\textquotesingle{}s off-\/hand weapon. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the off-\/hand weapon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_character_aff695a0c7cbea72f60fcaf37922bca29}\label{class_character_aff695a0c7cbea72f60fcaf37922bca29}} 
+\index{Character@{Character}!getItem@{getItem}}
+\index{getItem@{getItem}!Character@{Character}}
+\subsubsection{\texorpdfstring{getItem()}{getItem()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_item}{Item}} $\ast$ Character\+::get\+Item (\begin{DoxyParamCaption}\item[{string}]{item\+Name }\end{DoxyParamCaption})}
+
+
+
+Returns a pointer to an item in inventory if an item of specified name exists in inventory, return N\+U\+LL otherwise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\+Name} & The name of the item being searched for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the specified item if found, otherwise N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_character_afe5886a4e21bf06cc44eef1f18e85ad6}\label{class_character_afe5886a4e21bf06cc44eef1f18e85ad6}} 
+\index{Character@{Character}!getLuck@{getLuck}}
+\index{getLuck@{getLuck}!Character@{Character}}
+\subsubsection{\texorpdfstring{getLuck()}{getLuck()}}
+{\footnotesize\ttfamily double Character\+::get\+Luck (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the luck of the character. 
+
+\begin{DoxyReturn}{Returns}
+The luck of the character 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_character_ac2277578bac771149e518e3d5652807c}\label{class_character_ac2277578bac771149e518e3d5652807c}} 
+\index{Character@{Character}!getName@{getName}}
+\index{getName@{getName}!Character@{Character}}
+\subsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily string Character\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the name of the character. 
+
+\begin{DoxyReturn}{Returns}
+The name of the character 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_character_a8e5929a6b0405a011b2055a25e7ef41f}\label{class_character_a8e5929a6b0405a011b2055a25e7ef41f}} 
+\index{Character@{Character}!getNecklace@{getNecklace}}
+\index{getNecklace@{getNecklace}!Character@{Character}}
+\subsubsection{\texorpdfstring{getNecklace()}{getNecklace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_armor}{Armor}} $\ast$ Character\+::get\+Necklace (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a pointer to the character\textquotesingle{}s necklace. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the character\textquotesingle{}s necklace 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_character_a3e789de343597dfdf68b4aa45d537878}\label{class_character_a3e789de343597dfdf68b4aa45d537878}} 
+\index{Character@{Character}!getOffHand@{getOffHand}}
+\index{getOffHand@{getOffHand}!Character@{Character}}
+\subsubsection{\texorpdfstring{getOffHand()}{getOffHand()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_weapon}{Weapon}} $\ast$ Character\+::get\+Off\+Hand (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a pointer to the character\textquotesingle{}s off-\/hand weapon. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the off-\/hand weapon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_character_a91d2c56e020fe4e0b9231fd2b3da2ef4}\label{class_character_a91d2c56e020fe4e0b9231fd2b3da2ef4}} 
+\index{Character@{Character}!getOnHand@{getOnHand}}
+\index{getOnHand@{getOnHand}!Character@{Character}}
+\subsubsection{\texorpdfstring{getOnHand()}{getOnHand()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_weapon}{Weapon}} $\ast$ Character\+::get\+On\+Hand (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a pointer to the on-\/hand weapon. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the on-\/hand weapon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_character_a201f089787a3b1b1b6c8aa15677f5eb0}\label{class_character_a201f089787a3b1b1b6c8aa15677f5eb0}} 
+\index{Character@{Character}!getPants@{getPants}}
+\index{getPants@{getPants}!Character@{Character}}
+\subsubsection{\texorpdfstring{getPants()}{getPants()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_armor}{Armor}} $\ast$ Character\+::get\+Pants (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a pointer to the character\textquotesingle{}s pants. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the character\textquotesingle{}s pants 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_character_a2fa72a1a71a2009ce3f41addd17b3ee8}\label{class_character_a2fa72a1a71a2009ce3f41addd17b3ee8}} 
+\index{Character@{Character}!getResilience@{getResilience}}
+\index{getResilience@{getResilience}!Character@{Character}}
+\subsubsection{\texorpdfstring{getResilience()}{getResilience()}}
+{\footnotesize\ttfamily double Character\+::get\+Resilience (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the resilience of the character. 
+
+\begin{DoxyReturn}{Returns}
+The resilience of the character 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_character_ac75aeb066ce431010649333f3b8fae79}\label{class_character_ac75aeb066ce431010649333f3b8fae79}} 
+\index{Character@{Character}!getRings@{getRings}}
+\index{getRings@{getRings}!Character@{Character}}
+\subsubsection{\texorpdfstring{getRings()}{getRings()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_armor}{Armor}} $\ast$$\ast$ Character\+::get\+Rings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a pointer to an array of the character\textquotesingle{}s rings. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to an array of the character\textquotesingle{}s rings 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_character_a646f45c59a8b2a5d48e7e83722ebeaa6}\label{class_character_a646f45c59a8b2a5d48e7e83722ebeaa6}} 
+\index{Character@{Character}!getSkill@{getSkill}}
+\index{getSkill@{getSkill}!Character@{Character}}
+\subsubsection{\texorpdfstring{getSkill()}{getSkill()}}
+{\footnotesize\ttfamily double Character\+::get\+Skill (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the skill of the character. 
+
+\begin{DoxyReturn}{Returns}
+The skill of the character 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_character_a8e0bfcc02cbf60b5f466b4e8daa9ab8c}\label{class_character_a8e0bfcc02cbf60b5f466b4e8daa9ab8c}} 
+\index{Character@{Character}!getSpeed@{getSpeed}}
+\index{getSpeed@{getSpeed}!Character@{Character}}
+\subsubsection{\texorpdfstring{getSpeed()}{getSpeed()}}
+{\footnotesize\ttfamily double Character\+::get\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the speed of the character. 
+
+\begin{DoxyReturn}{Returns}
+The speed of the character 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_character_a88d219c54c93f65ead5a66545c7ebf87}\label{class_character_a88d219c54c93f65ead5a66545c7ebf87}} 
+\index{Character@{Character}!giveItem@{giveItem}}
+\index{giveItem@{giveItem}!Character@{Character}}
+\subsubsection{\texorpdfstring{giveItem()}{giveItem()}}
+{\footnotesize\ttfamily int Character\+::give\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_item}{Item}} $\ast$}]{item }\end{DoxyParamCaption})}
+
+
+
+Gives the character an item. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & The item being given to the character \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, -\/1 if inventory is full 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+characters/Character.\+h\item 
+characters/Character.\+cpp\end{DoxyCompactItemize}
