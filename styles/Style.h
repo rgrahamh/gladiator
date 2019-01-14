@@ -11,7 +11,7 @@ class Style
     Style();
     Style(string t, double a, double d, double c, double r, double e, double h, double sp, double sk, double l);
     ~Style();
-    // TODO: string getType();
+    string getType();
     double getAttack();
     double getDefense();
     double getConstitution();
@@ -21,14 +21,8 @@ class Style
     double getSpeed();
     double getSkill();
     double getLuck();
-    bool *getStyleAbilities()
-    {
-        return this->abilities;
-    }
-    void setStyleAbilities(bool *ab)
-    {
-        copy(ab, ab + sizeof(ab), this->abilities);
-    }
+    bool *getStyleAbilities();
+    void setStyleAbilities(bool *ab);
     string getStyleAbilityStr(bool *ab);
 
   private:
