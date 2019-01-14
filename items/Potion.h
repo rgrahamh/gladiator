@@ -14,6 +14,7 @@ class Potion : public Item
 {
 public:
   Potion(string n, double w, int val, int efct, int amng);
+  ~Potion();
   int getEffect();
   double getAmount();
   void print();

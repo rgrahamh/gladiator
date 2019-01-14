@@ -6,19 +6,27 @@
 
 using namespace std;
 
+enum
+{
+  WEAPON,
+  ARMOR,
+  POTION,
+  MISC
+};
+
 class Item
 {
 public:
-  Item(string n, string t, double w, int val);
+  Item(string n, double w, int val, int t);
   ~Item();
   string getName();
-  string getType();
+  int getType();
   double getWeight();
   int getValue();
   void print();
 
 protected:
-  string type;
+  int type;
   string name;
   double weight;
   int value;

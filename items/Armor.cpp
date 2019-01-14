@@ -1,26 +1,59 @@
 #include "Armor.h"
 
-Armor::Armor(string n, double w, int val, double def, double res, int t) : Item(n, "armor", w, val)
+/**
+ * @breif The parameterized constructor for Armor
+ * @param n The name of the piece of armor
+ * @param w The weight of the piece of armor
+ * @param val The value of the piece of armor
+ * @param def The additional defense provided by the piece of armor
+ * @param res The aditional resilience provided by the piece of armor
+ * @param t The type of armor
+ * @return A new piece of armor
+ */
+Armor::Armor(string n, double w, int val, double def, double res, int t) : Item(n, w, val, ARMOR)
 {
     this->defense = def;
     this->resilience = res;
     this->armorType = t;
 }
+
+/**
+ * @breif The destructor for Armor
+ */
 Armor::~Armor()
 {
 }
+
+/**
+ * @breif Returns the defense stat of the armor
+ * @return The defense stat of the armor
+ */
 double Armor::getDefense()
 {
     return this->defense;
 }
+
+/**
+ * @breif Returns the resilience stat of the armor
+ * @return The resilience stat of the armor
+ */
 double Armor::getResilence()
 {
     return this->resilience;
 }
+
+/**
+ * @breif Returns the type of armor
+ * @return The type of armor
+ */
 int Armor::getArmorType()
 {
     return this->armorType;
 }
+
+/**
+ * @breif Prints information about the armor
+ */
 void Armor::print()
 {
     cout << this->name << ":" << endl

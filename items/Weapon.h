@@ -18,7 +18,7 @@ enum
 class Weapon : public Item
 {
 public:
-  Weapon(string n, double w, int val, double dmg, int t);
+  Weapon(string n, double w, int val, double dmg, int t, bool thnd);
   ~Weapon();
   double getDamage();
   int getWeaponType();
@@ -27,6 +27,7 @@ public:
 private:
   double damage;
   int weaponType;
+  bool twoHanded;
 };
 
 #endif

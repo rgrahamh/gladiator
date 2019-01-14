@@ -4,6 +4,12 @@
 
 using namespace std;
 
+/**
+ * @breif The parameterized constructor for the Character class
+ * @param n The name of the character
+ * @param r The race of the character
+ * @param s The style of the character
+ */
 Character::Character(string n, Race r, Style s)
 {
     this->race = r;
@@ -13,10 +19,16 @@ Character::Character(string n, Race r, Style s)
     this->determineStats();
 }
 
+/**
+ * @breif The destructor for the Character class
+ */
 Character::~Character()
 {
 }
 
+/**
+ * @breif Determines the stats of a character
+ */
 void Character::determineStats()
 {
     this->attack = this->race.getAttack() + this->style.getAttack();
@@ -38,49 +50,101 @@ void Character::determineStats()
     copy(characterAbils, characterAbils + sizeof(characterAbils), this->abilities);
 }
 
+/**
+ * @breif Returns the name of the character
+ * @return The name of the character
+ */
 string Character::getName()
 {
     return this->name;
 }
 
+/**
+ * @breif Returns the attack of the character
+ * @return The attack of the character
+ */
 double Character::getAttack()
 {
     return this->attack;
 }
 
+/**
+ * @breif Returns the defense of the character
+ * @return The defense of the character
+ */
 double Character::getDefense()
 {
     return this->defense;
 }
+
+/**
+ * @breif Returns the constitution of the character
+ * @return The constitution of the character
+ */
 double Character::getConstitution()
 {
     return this->constitution;
 }
+
+/**
+ * @breif Returns the resilience of the character
+ * @return The resilience of the character
+ */
 double Character::getResilience()
 {
     return this->resilience;
 }
+
+/**
+ * @breif Returns the energy of the character
+ * @return the energy of the character
+ */
 double Character::getEnergy()
 {
     return this->energy;
 }
+
+/**
+ * @breif Returns the health of the character
+ * @return The health of the character
+ */
 double Character::getHealth()
 {
     return this->health;
 }
+
+/**
+ * @breif Returns the speed of the character
+ * @return The speed of the character
+ */
 double Character::getSpeed()
 {
     return this->speed;
 }
+
+/**
+ * @breif Returns the skill of the character
+ * @return The skill of the character
+ */
 double Character::getSkill()
 {
     return this->skill;
 }
+
+/**
+ * @breif Returns the luck of the character
+ * @return The luck of the character
+ */
 double Character::getLuck()
 {
     return this->luck;
 }
 
+/**
+ * @breif Returns a string representation of the abilities that the character possesses
+ * @param ab The bool array of the character's abilities
+ * @return The string representation of all of the character's abilities
+ */
 string Character::getCharacterAbilityString(bool *ab)
 {
     string result = "";
