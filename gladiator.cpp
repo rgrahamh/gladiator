@@ -2,12 +2,14 @@
 #include <iostream>
 #include <string>
 #include "characters/Player.h"
+#include "characters/Enemy.h"
 #include "styles/Warrior.h"
 #include "races/Human.h"
 
 using namespace std;
 
-struct {
+struct
+{
     string name;
     int race;
     int style;
@@ -48,7 +50,8 @@ string getInput(string question, int isCaps)
  * @brief Returns a struct of type PlayerInfo (containing name, style, and race) after asking the player some questions
  * @return A struct of type PlayerInfo 
  */
-PlayerInfo getPlayerInfo() {
+PlayerInfo getPlayerInfo()
+{
     string name = getInput("Welcome to The Arena! Tell me, adventurer, what's your name?", 1);
     string s, r;
     int style, race;
@@ -72,9 +75,9 @@ PlayerInfo getPlayerInfo() {
     race = getRaceType(r);
 
     PlayerInfo pi = {
-        name, // name
+        name,  // name
         style, // style
-        race  // race
+        race   // race
     };
     return pi;
 }
@@ -84,7 +87,8 @@ PlayerInfo getPlayerInfo() {
  * @param style A string value indicating the style
  * @return The desired enumeration value for style
  */
-int getStyleType(string style) {
+int getStyleType(string style)
+{
     int s;
     if (style.compare("warrior") == 0)
     {
@@ -111,7 +115,8 @@ int getStyleType(string style) {
  * @param style A string value indicating the race
  * @return The desired enumeration value for race
  */
-int getRaceType(string race) {
+int getRaceType(string race)
+{
     int r;
     if (race.compare("human") == 0)
     {
@@ -142,8 +147,35 @@ int getRaceType(string race) {
  */
 Player *instantiatePlayer(string n, int r, int s)
 {
+    Style *style = determineStyle(s);
+    Race *race = determineRace(r);
+
+    return new Player(n, *race, *style);
+}
+
+/**
+ * @breif Instantiates a new Enemy object
+ * @param n The name of the enemy
+ * @param r An enum representation of the race of the enemy
+ * @param s An enum representation of the style of the enemy
+ * @param d The difficulty of the enemy
+ */
+Enemy *instantiateEnemy(string n, int r, int s, int d)
+{
+    Style *style = determineStyle(s);
+    Race *race = determineRace(r);
+
+    return new Enemy(n, *race, *style, BABY);
+}
+
+/**
+ * @breif Determines the character's style based on its enumeration
+ * @param s The enum representation of the style
+ * @return A pointer to an object of the style
+ */
+Style *determineStyle(int s)
+{
     Style *style;
-    Race *race;
 
     switch (s)
     {
@@ -158,6 +190,18 @@ Player *instantiatePlayer(string n, int r, int s)
         style = new Warrior();
     }
 
+    return style;
+}
+
+/**
+ * @breif Determines the character's race based on its enumeration
+ * @param s The enum representation of the race
+ * @return A pointer to an object of the race
+ */
+Race *determineRace(int r)
+{
+    Race *race;
+
     switch (r)
     {
     case HUMAN:
@@ -171,5 +215,5 @@ Player *instantiatePlayer(string n, int r, int s)
         race = new Human();
     }
 
-    return new Player(n, *race, *style);
+    return race;
 }
