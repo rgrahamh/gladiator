@@ -10,6 +10,10 @@ enum
   DAMAGING
 };
 
+/**
+ * @class Potion <Potion.h>
+ * @brief A class to describe a particular potion to be used by player or enemy
+ */ 
 class Potion : public Item
 {
 public:

@@ -14,6 +14,10 @@
 #include "../items/Potion.h"
 #include "../items/Weapon.h"
 
+/**
+ * @class Character <Character.h>
+ * @brief A class to describe a player or enemy
+ */ 
 class Character
 {
 public:
@@ -45,10 +49,7 @@ public:
   int giveItem(Item *item);
   int giveMultipleItems(Item **items);
   string getCharacterAbilityString(bool *ab);
-  bool *getCharacterAbilities()
-  {
-    return this->abilities;
-  }
+  bool *getCharacterAbilities();
 
 protected:
   struct invSlot

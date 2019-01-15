@@ -7,6 +7,7 @@
  * @param s The enemy's style
  * @param inv The enemy's inventory
  * @param equipArr The array of items for the enemy to equip
+ * @return A pointer to a new Enemy object
  */
 Enemy::Enemy(string n, Race r, Style s, slot *inv, string *equipArr) : Character(name, race, style)
 {
@@ -20,6 +21,7 @@ Enemy::Enemy(string n, Race r, Style s, slot *inv, string *equipArr) : Character
  * @param r The enemy's race
  * @param s The enemy's style
  * @param d The enemy's difficulty level
+ * @return A pointer to a new Enemy object
  */
 Enemy::Enemy(string name, Race race, Style style, int difficulty) : Character(name, race, style)
 {
@@ -51,7 +53,11 @@ Enemy::Enemy(string name, Race race, Style style, int difficulty) : Character(na
 }
 
 /**
+<<<<<<< HEAD
  * @brief Destructor for the Enemy class
+=======
+ * @brief The default deconstructor for the Enemy class 
+>>>>>>> master
  */
 Enemy::~Enemy()
 {

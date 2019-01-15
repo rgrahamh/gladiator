@@ -20,6 +20,10 @@ enum weapons
 };
 #endif
 
+/**
+ * @class Weapon <Weapon.h>
+ * @brief A class to describe a weapon equipabble by a player or enemy
+ */ 
 class Weapon : public Item
 {
 public:

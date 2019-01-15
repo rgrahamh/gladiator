@@ -1,7 +1,7 @@
 #include "Item.h"
 
 /**
- * @breif Parameterized constructor for Item
+ * @brief Parameterized constructor for Item
  * @param n The name of the item
  * @param w The weight of the item
  * @param val The value of the item
@@ -17,14 +17,14 @@ Item::Item(string n, double w, int val, int t = MISC)
 }
 
 /**
- * @breif Destructor for Item
+ * @brief Destructor for Item
  */
 Item::~Item()
 {
 }
 
 /**
- * @breif Returns the item name
+ * @brief Returns the item name
  * @return The item name
  */
 string Item::getName()
@@ -33,7 +33,7 @@ string Item::getName()
 }
 
 /**
- * @breif Returns the item type
+ * @brief Returns the item type
  * @return The item type
  */
 int Item::getType()
@@ -42,7 +42,7 @@ int Item::getType()
 }
 
 /**
- * @breif Returns the item weight
+ * @brief Returns the item weight
  * @return The item weight
  */
 double Item::getWeight()
@@ -51,7 +51,7 @@ double Item::getWeight()
 }
 
 /**
- * @breif Returns the item value
+ * @brief Returns the item value
  * @return The item value
  */
 int Item::getValue()
@@ -60,8 +60,8 @@ int Item::getValue()
 }
 
 /**
- * @breif Renames an item
- * @param The new item name
+ * @brief Renames an item
+ * @param n The new item name
  */
 int Item::setName(string n)
 {
@@ -69,7 +69,7 @@ int Item::setName(string n)
 }
 
 /**
- * @breif Prints information about the item
+ * @brief Prints information about the item
  */
 void Item::print()
 {

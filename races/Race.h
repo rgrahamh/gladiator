@@ -25,6 +25,10 @@ enum races
   ELF
 };
 
+/**
+ * @class Race <Race.h>
+ * @brief A class to describe a player or enemy's race
+ */ 
 class Race
 {
   public:
