@@ -11,11 +11,15 @@ enum difficulty
     INSANE
 };
 
+/**
+ * @class Enemy <Enemy.h>
+ * @brief A class to describe a particular character who fights the player
+ */ 
 class Enemy : public Character
 {
   public:
     Enemy(string name, Race race, Style style);
-    Enemy(string name, Race rae, Style style, int difficulty);
+    Enemy(string name, Race race, Style style, int difficulty);
     ~Enemy();
 };
 #endif

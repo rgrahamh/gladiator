@@ -19,6 +19,10 @@ enum
   RING
 };
 
+/**
+ * @class Armor <Armor.h>
+ * @brief A class to describe a player- or enemy-equippable piece of armor
+ */ 
 class Armor : public Item
 {
 public:

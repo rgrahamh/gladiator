@@ -25,6 +25,10 @@ enum styles
   DUALFIGHTER
 };
 
+/**
+ * @class Style <Style.h>
+ * @brief A class to describe fighting styles for a player or enemy
+ */ 
 class Style
 {
   public:

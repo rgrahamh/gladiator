@@ -14,6 +14,10 @@ enum
   MISC
 };
 
+/**
+ * @class Item <Item.h>
+ * @brief A class to describe an item equippable by a player or enemy
+ */ 
 class Item
 {
 public:
@@ -27,9 +31,9 @@ public:
   void print();
 
 protected:
-  int type;
-  string name;
-  double weight;
-  int value;
+  int type;       /**< an enumeration int for the type of item */
+  string name;    /**< the name of the item */
+  double weight;  /**< how much an item weighs */
+  int value;      /**< how much an item costs */
 };
 #endif

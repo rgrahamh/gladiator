@@ -368,6 +368,15 @@ int Character::giveItem(Item *item)
     return -1;
 }
 
+/**
+ * @brief The getter function for abilities
+ * @return A bool array value of the character's abilities 
+ */
+bool *Character::getCharacterAbilities()
+{
+    return this->abilities;
+}
+
 //int main()
 //{
 //    Race r = Human();

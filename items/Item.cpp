@@ -61,7 +61,7 @@ int Item::getValue()
 
 /**
  * @brief Renames an item
- * @param The new item name
+ * @param n The new item name
  */
 int Item::setName(string n)
 {

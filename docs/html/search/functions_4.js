@@ -3,6 +3,7 @@ var searchData=
   ['getamount',['getAmount',['../class_potion.html#ab279398e26ca96f58157ee9ae3534874',1,'Potion']]],
   ['getarmortype',['getArmorType',['../class_armor.html#a09a6bb08255352213c50eb60acc73f6d',1,'Armor']]],
   ['getattack',['getAttack',['../class_character.html#a10103c3d082351807a06dc758b49ca4e',1,'Character::getAttack()'],['../class_race.html#a34a22d44a5d98cb28841e3fccef0bbf7',1,'Race::getAttack()'],['../class_style.html#ae46ba0263757bb89598881126e9600ec',1,'Style::getAttack()']]],
+  ['getcharacterabilities',['getCharacterAbilities',['../class_character.html#a9284011c9cdcb0b2f311dbb88ed3a668',1,'Character']]],
   ['getcharacterabilitystring',['getCharacterAbilityString',['../class_character.html#ad1e769bb07c97c93de648fca312caef0',1,'Character']]],
   ['getchest',['getChest',['../class_character.html#a5bdf09759593911af55ce0a9f9f7959f',1,'Character']]],
   ['getconstitution',['getConstitution',['../class_character.html#a8220740f682216e2205a17a93da24da5',1,'Character::getConstitution()'],['../class_race.html#a10097a6f7879d1f31e1f7fec6eb433ad',1,'Race::getConstitution()'],['../class_style.html#afffe5458fde2c128c83e20a47654586d',1,'Style::getConstitution()']]],

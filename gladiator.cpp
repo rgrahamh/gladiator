@@ -7,10 +7,14 @@
 
 using namespace std;
 
+/**
+ * @struct PlayerInfo <gladiator.cpp>
+ * @brief A struct to describe a player's chosen attributes
+ */ 
 struct {
-    string name;
-    int race;
-    int style;
+    string name;  /**< the name of the player */
+    int race;     /**< an enum value for the type of race */
+    int style;    /**< an enum value for the type of style */
 } typedef PlayerInfo;
 
 string getInput(string question, int isCaps = 0);
