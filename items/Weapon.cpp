@@ -11,11 +11,13 @@
  * @param thnd If the weapon is two-handed
  * @return A new Weapon
  */
-Weapon::Weapon(string n, double w, int val, double dmg, int t, bool thnd) : Item(n, w, val, WEAPON)
+Weapon::Weapon(string n, double w, int val, double dmg, int t, bool thnd, double def = 0, double res = 0) : Item(n, w, val, WEAPON)
 {
     this->damage = dmg;
     this->weaponType = t;
     this->twoHanded = thnd;
+    this->defense = def;
+    this->resilience = res;
 }
 
 /**

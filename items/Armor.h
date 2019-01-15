@@ -2,6 +2,7 @@
 #define ARMOR_H
 
 #include "Item.h"
+#include "item_construction/ArmorConstruction.cpp"
 #include <string>
 #include <iostream>
 

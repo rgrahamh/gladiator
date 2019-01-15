@@ -44,12 +44,14 @@ public:
   Armor **getRings();
   Item *getItem(string itemName);
   int equipItem(string itemName, int slot);
+  int equipMultipleItems(string *itemName);
   void printInventory();
   int giveItem(Item *item);
+  int giveMultipleItems(Item **items);
   string getCharacterAbilityString(bool *ab);
   bool *getCharacterAbilities();
 
-private:
+protected:
   struct invSlot
   {
     int num;
@@ -84,8 +86,8 @@ private:
   double luck;
   bool abilities[6];
 
-  void equipArmor(Armor *armor, int slot);
   void equipWeapon(Weapon *weapon, int hand);
+  void equipArmor(Armor *armor, int slot);
 };
 
 #endif

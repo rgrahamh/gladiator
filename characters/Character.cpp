@@ -336,6 +336,45 @@ void Character::equipWeapon(Weapon *weapon, int hand = 0)
 }
 
 /**
+ * @brief Equips an array of items of the specified names (if found in inventory) to the applicable slot/hand
+ * @param equipArr An array of item names to equip
+ * @return The number of successful item equips
+ */
+int Character::equipMultipleItems(string *equipArr)
+{
+    int equippedItems = 0;
+    if (equipArr != NULL)
+    {
+        int equipSize = sizeof(equipArr) / sizeof(equipArr[0]); //equipSize calculates how many items are being equipped
+        int weaponVal = 0;                                      //weaponVal keeps track of the weapon handedness
+        int ringVal = 0;                                        //ringVal keeps track of the ring slots
+        for (int i = 0; i < equipSize; i++)
+        {
+            Item *item = getItem(equipArr[i]);
+            if (item != NULL)
+            {
+                if (item->getType() == WEAPON)
+                {
+                    equipItem(equipArr[i], weaponVal);
+                    weaponVal++;
+                }
+                else if (item->getType() == ARMOR && ((Armor *)item)->getArmorType() == RING)
+                {
+                    equipItem(equipArr[i], ringVal);
+                    ringVal++;
+                }
+                else
+                {
+                    equipItem(equipArr[i], 0);
+                }
+                equippedItems++;
+            }
+        }
+    }
+    return equippedItems;
+}
+
+/**
  * @brief Prints the character's inventory
  */
 void Character::printInventory()
@@ -366,6 +405,30 @@ int Character::giveItem(Item *item)
         }
     }
     return -1;
+}
+
+/**
+ * @brief Gives the character multiple items
+ * @param items The array of items being given to the character
+ * @return The number of items successfully given to the character
+ */
+int Character::giveMultipleItems(Item **items)
+{
+    if (items == NULL)
+    {
+        return 0;
+    }
+    int numItems = sizeof(items) / sizeof(items[0]);
+    int numItemsGiven = 0;
+    for (int i = 0; numItemsGiven < numItems; i++)
+    {
+        if (items[i] != NULL)
+        {
+            this->giveItem(items[i]);
+            numItemsGiven++;
+        }
+    }
+    return numItemsGiven;
 }
 
 /**
