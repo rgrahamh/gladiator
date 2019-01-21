@@ -10,13 +10,12 @@ using namespace std;
  * @param r The race of the character
  * @param s The style of the character
  */
-Character::Character(string n, Race r, Style s)
-{
+Character::Character(string n, Race r, Style s) {
     this->race = r;
     this->style = s;
     this->name = n;
 
-    inventory = (slot *)malloc(sizeof(slot) * 256);
+    inventory = (slot*)malloc(sizeof(slot) * 256);
     memset(inventory, 0, sizeof(slot) * 256);
     memset(&equipped, 0, sizeof(equippedItems));
 
@@ -26,19 +25,18 @@ Character::Character(string n, Race r, Style s)
 /**
  * @brief The destructor for the Character class
  */
-Character::~Character()
-{
+Character::~Character() {
     free(inventory);
 }
 
 /**
  * @brief Determines the stats of a character
  */
-void Character::determineStats()
-{
+void Character::determineStats() {
     this->attack = this->race.getAttack() + this->style.getAttack();
     this->defense = this->race.getDefense() + this->style.getDefense();
-    this->constitution = this->race.getConstitution() + this->style.getConstitution();
+    this->constitution =
+      this->race.getConstitution() + this->style.getConstitution();
     this->resilience = this->race.getResilience() + this->style.getResilience();
     this->energy = this->race.getEnergy() + this->style.getEnergy();
     this->health = this->race.getHealth() + this->style.getHealth();
@@ -47,20 +45,20 @@ void Character::determineStats()
     this->luck = this->race.getLuck() + this->style.getLuck();
 
     bool characterAbils[6] = {false, false, false, false, false, false};
-    for (int i = 0; i < 6; i++)
-    {
-        characterAbils[i] = this->race.getRaceAbilities()[i] && this->style.getStyleAbilities()[i];
+    for(int i = 0; i < 6; i++) {
+        characterAbils[i] = this->race.getRaceAbilities()[i] &&
+                            this->style.getStyleAbilities()[i];
     }
 
-    copy(characterAbils, characterAbils + sizeof(characterAbils), this->abilities);
+    copy(characterAbils, characterAbils + sizeof(characterAbils),
+         this->abilities);
 }
 
 /**
  * @brief Returns the name of the character
  * @return The name of the character
  */
-string Character::getName()
-{
+string Character::getName() {
     return this->name;
 }
 
@@ -68,8 +66,7 @@ string Character::getName()
  * @brief Returns the attack of the character
  * @return The attack of the character
  */
-double Character::getAttack()
-{
+double Character::getAttack() {
     return this->attack;
 }
 
@@ -77,8 +74,7 @@ double Character::getAttack()
  * @brief Returns the defense of the character
  * @return The defense of the character
  */
-double Character::getDefense()
-{
+double Character::getDefense() {
     return this->defense;
 }
 
@@ -86,8 +82,7 @@ double Character::getDefense()
  * @brief Returns the constitution of the character
  * @return The constitution of the character
  */
-double Character::getConstitution()
-{
+double Character::getConstitution() {
     return this->constitution;
 }
 
@@ -95,8 +90,7 @@ double Character::getConstitution()
  * @brief Returns the resilience of the character
  * @return The resilience of the character
  */
-double Character::getResilience()
-{
+double Character::getResilience() {
     return this->resilience;
 }
 
@@ -104,8 +98,7 @@ double Character::getResilience()
  * @brief Returns the energy of the character
  * @return the energy of the character
  */
-double Character::getEnergy()
-{
+double Character::getEnergy() {
     return this->energy;
 }
 
@@ -113,8 +106,7 @@ double Character::getEnergy()
  * @brief Returns the health of the character
  * @return The health of the character
  */
-double Character::getHealth()
-{
+double Character::getHealth() {
     return this->health;
 }
 
@@ -122,8 +114,7 @@ double Character::getHealth()
  * @brief Returns the speed of the character
  * @return The speed of the character
  */
-double Character::getSpeed()
-{
+double Character::getSpeed() {
     return this->speed;
 }
 
@@ -131,8 +122,7 @@ double Character::getSpeed()
  * @brief Returns the skill of the character
  * @return The skill of the character
  */
-double Character::getSkill()
-{
+double Character::getSkill() {
     return this->skill;
 }
 
@@ -140,8 +130,7 @@ double Character::getSkill()
  * @brief Returns the luck of the character
  * @return The luck of the character
  */
-double Character::getLuck()
-{
+double Character::getLuck() {
     return this->luck;
 }
 
@@ -150,8 +139,7 @@ double Character::getLuck()
  * @param ab The bool array of the character's abilities
  * @return The string representation of all of the character's abilities
  */
-string Character::getCharacterAbilityString(bool *ab)
-{
+string Character::getCharacterAbilityString(bool* ab) {
     string result = "";
     (ab[0]) ? result = result + " LANCE" : result = result + "";
     (ab[1]) ? result = result + " SWORD" : result = result + "";
@@ -166,8 +154,7 @@ string Character::getCharacterAbilityString(bool *ab)
  * @brief Returns a pointer to the on-hand weapon
  * @return A pointer to the on-hand weapon
  */
-Weapon *Character::getOnHand()
-{
+Weapon* Character::getOnHand() {
     return equipped.onHand;
 }
 
@@ -175,8 +162,7 @@ Weapon *Character::getOnHand()
  * @brief Returns a pointer to the character's off-hand weapon
  * @return A pointer to the off-hand weapon
  */
-Weapon *Character::getOffHand()
-{
+Weapon* Character::getOffHand() {
     return equipped.offHand;
 }
 
@@ -184,8 +170,7 @@ Weapon *Character::getOffHand()
  * @brief Returns a pointer to the character's off-hand weapon
  * @return A pointer to the off-hand weapon
  */
-Armor *Character::getHelmet()
-{
+Armor* Character::getHelmet() {
     return equipped.helmet;
 }
 
@@ -193,8 +178,7 @@ Armor *Character::getHelmet()
  * @brief Returns a pointer to the character's chest armor
  * @return A pointer to the character's chest armor
  */
-Armor *Character::getChest()
-{
+Armor* Character::getChest() {
     return equipped.chest;
 }
 
@@ -202,8 +186,7 @@ Armor *Character::getChest()
  * @brief Returns a pointer to the character's pants
  * @return A pointer to the character's pants
  */
-Armor *Character::getPants()
-{
+Armor* Character::getPants() {
     return equipped.pants;
 }
 
@@ -211,8 +194,7 @@ Armor *Character::getPants()
  * @brief Returns a pointer to the character's gloves
  * @return A pointer to the character's gloves
  */
-Armor *Character::getGloves()
-{
+Armor* Character::getGloves() {
     return equipped.gloves;
 }
 
@@ -220,8 +202,7 @@ Armor *Character::getGloves()
  * @brief Returns a pointer to the character's necklace
  * @return A pointer to the character's necklace
  */
-Armor *Character::getNecklace()
-{
+Armor* Character::getNecklace() {
     return equipped.necklace;
 }
 
@@ -229,8 +210,7 @@ Armor *Character::getNecklace()
  * @brief Returns a pointer to an array of the character's rings
  * @return A pointer to an array of the character's rings
  */
-Armor **Character::getRings()
-{
+Armor** Character::getRings() {
     return equipped.rings;
 };
 
@@ -239,12 +219,10 @@ Armor **Character::getRings()
  * @param itemName The name of the item being searched for
  * @return A pointer to the specified item if found, otherwise NULL
  */
-Item *Character::getItem(string itemName)
-{
-    for (int i = 0; i < 256; i++)
-    {
-        if (inventory[i].item != NULL && itemName.compare(inventory[i].item->getName()) == 0)
-        {
+Item* Character::getItem(string itemName) {
+    for(int i = 0; i < 256; i++) {
+        if(inventory[i].item != NULL &&
+           itemName.compare(inventory[i].item->getName()) == 0) {
             return inventory[i].item;
         }
     }
@@ -258,19 +236,15 @@ Item *Character::getItem(string itemName)
  * @param slot The slot that the item is being equipped to (use for rings and on-hand (0) or off-hand (1) weapons)
  * @return 0 if successful, -1 if the item could not be equipped.
  */
-int Character::equipItem(string itemName, int slot = 0)
-{
-    Item *newItem = getItem(itemName);
-    if (newItem != NULL && (newItem->getType()) == WEAPON)
-    {
-        equipWeapon((Weapon *)newItem, slot);
+int Character::equipItem(string itemName, int slot = 0) {
+    Item* newItem = getItem(itemName);
+    if(newItem != NULL && (newItem->getType()) == WEAPON) {
+        equipWeapon((Weapon*)newItem, slot);
     }
-    else if (newItem != NULL && (newItem->getType()) == ARMOR)
-    {
-        equipArmor((Armor *)newItem, slot);
+    else if(newItem != NULL && (newItem->getType()) == ARMOR) {
+        equipArmor((Armor*)newItem, slot);
     }
-    else
-    {
+    else {
         return -1;
     }
     return 0;
@@ -281,35 +255,32 @@ int Character::equipItem(string itemName, int slot = 0)
  * @param armor A pointer to the armor being equipped
  * @param slot The slot that the armor is being equpped to (default 0)
  */
-void Character::equipArmor(Armor *armor, int slot = 0)
-{
-    if (armor == NULL)
-    {
+void Character::equipArmor(Armor* armor, int slot = 0) {
+    if(armor == NULL) {
         return;
     }
 
-    switch ((*armor).getArmorType())
-    {
-    case (HELMET):
-        this->equipped.helmet = armor;
-        break;
-    case (GLOVES):
-        this->equipped.gloves = armor;
-        break;
-    case (BOOTS):
-        this->equipped.boots = armor;
-        break;
-    case (CHEST):
-        this->equipped.boots = armor;
-        break;
-    case (PANTS):
-        this->equipped.boots = armor;
-        break;
-    case (NECKLACE):
-        this->equipped.necklace = armor;
-        break;
-    case (RING):
-        this->equipped.rings[slot] = armor;
+    switch((*armor).getArmorType()) {
+        case(HELMET):
+            this->equipped.helmet = armor;
+            break;
+        case(GLOVES):
+            this->equipped.gloves = armor;
+            break;
+        case(BOOTS):
+            this->equipped.boots = armor;
+            break;
+        case(CHEST):
+            this->equipped.boots = armor;
+            break;
+        case(PANTS):
+            this->equipped.boots = armor;
+            break;
+        case(NECKLACE):
+            this->equipped.necklace = armor;
+            break;
+        case(RING):
+            this->equipped.rings[slot] = armor;
     }
 }
 
@@ -318,19 +289,15 @@ void Character::equipArmor(Armor *armor, int slot = 0)
  * @param armor A pointer to the weapon being equipped
  * @param slot The slot that the weapon is being equpped to (default 0)
  */
-void Character::equipWeapon(Weapon *weapon, int hand = 0)
-{
-    if (weapon == NULL)
-    {
+void Character::equipWeapon(Weapon* weapon, int hand = 0) {
+    if(weapon == NULL) {
         return;
     }
 
-    if (hand == 0)
-    {
+    if(hand == 0) {
         equipped.onHand = weapon;
     }
-    else
-    {
+    else {
         equipped.offHand = weapon;
     }
 }
@@ -340,31 +307,29 @@ void Character::equipWeapon(Weapon *weapon, int hand = 0)
  * @param equipArr An array of item names to equip
  * @return The number of successful item equips
  */
-int Character::equipMultipleItems(string *equipArr)
-{
+int Character::equipMultipleItems(string* equipArr) {
     int equippedItems = 0;
-    if (equipArr != NULL)
-    {
-        int equipSize = sizeof(equipArr) / sizeof(equipArr[0]); //equipSize calculates how many items are being equipped
-        int weaponVal = 0;                                      //weaponVal keeps track of the weapon handedness
-        int ringVal = 0;                                        //ringVal keeps track of the ring slots
-        for (int i = 0; i < equipSize; i++)
-        {
-            Item *item = getItem(equipArr[i]);
-            if (item != NULL)
-            {
-                if (item->getType() == WEAPON)
-                {
+    if(equipArr != NULL) {
+        int equipSize =
+          sizeof(equipArr) /
+          sizeof(
+            equipArr
+              [0]); //equipSize calculates how many items are being equipped
+        int weaponVal = 0; //weaponVal keeps track of the weapon handedness
+        int ringVal = 0;   //ringVal keeps track of the ring slots
+        for(int i = 0; i < equipSize; i++) {
+            Item* item = getItem(equipArr[i]);
+            if(item != NULL) {
+                if(item->getType() == WEAPON) {
                     equipItem(equipArr[i], weaponVal);
                     weaponVal++;
                 }
-                else if (item->getType() == ARMOR && ((Armor *)item)->getArmorType() == RING)
-                {
+                else if(item->getType() == ARMOR &&
+                        ((Armor*)item)->getArmorType() == RING) {
                     equipItem(equipArr[i], ringVal);
                     ringVal++;
                 }
-                else
-                {
+                else {
                     equipItem(equipArr[i], 0);
                 }
                 equippedItems++;
@@ -377,13 +342,11 @@ int Character::equipMultipleItems(string *equipArr)
 /**
  * @brief Prints the character's inventory
  */
-void Character::printInventory()
-{
-    for (int i = 0; i < 256; i++)
-    {
-        if (inventory[i].num != 0)
-        {
-            cout << inventory[i].num << "x " << inventory[i].item->getName() << endl;
+void Character::printInventory() {
+    for(int i = 0; i < 256; i++) {
+        if(inventory[i].num != 0) {
+            cout << inventory[i].num << "x " << inventory[i].item->getName()
+                 << endl;
         }
     }
 };
@@ -393,12 +356,9 @@ void Character::printInventory()
  * @param item The item being given to the character
  * @return 0 if successful, -1 if inventory is full
  */
-int Character::giveItem(Item *item)
-{
-    for (int i = 0; i < 256; i++)
-    {
-        if (inventory[i].num == 0)
-        {
+int Character::giveItem(Item* item) {
+    for(int i = 0; i < 256; i++) {
+        if(inventory[i].num == 0) {
             inventory[i].item = item;
             inventory[i].num++;
             return 0;
@@ -412,18 +372,14 @@ int Character::giveItem(Item *item)
  * @param items The array of items being given to the character
  * @return The number of items successfully given to the character
  */
-int Character::giveMultipleItems(Item **items)
-{
-    if (items == NULL)
-    {
+int Character::giveMultipleItems(Item** items) {
+    if(items == NULL) {
         return 0;
     }
     int numItems = sizeof(items) / sizeof(items[0]);
     int numItemsGiven = 0;
-    for (int i = 0; numItemsGiven < numItems; i++)
-    {
-        if (items[i] != NULL)
-        {
+    for(int i = 0; numItemsGiven < numItems; i++) {
+        if(items[i] != NULL) {
             this->giveItem(items[i]);
             numItemsGiven++;
         }
@@ -435,8 +391,7 @@ int Character::giveMultipleItems(Item **items)
  * @brief The getter function for abilities
  * @return A bool array value of the character's abilities 
  */
-bool *Character::getCharacterAbilities()
-{
+bool* Character::getCharacterAbilities() {
     return this->abilities;
 }
 

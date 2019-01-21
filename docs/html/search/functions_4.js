@@ -34,5 +34,6 @@ var searchData=
   ['getvalue',['getValue',['../class_item.html#a9ceb9a0df0efe18d23e347471f908be7',1,'Item']]],
   ['getweapontype',['getWeaponType',['../class_weapon.html#ae801d0c42caf03432c4c97dfca48c88c',1,'Weapon']]],
   ['getweight',['getWeight',['../class_item.html#ada983fd5602c02f2ec2bc86401b2355e',1,'Item']]],
-  ['giveitem',['giveItem',['../class_character.html#a88d219c54c93f65ead5a66545c7ebf87',1,'Character']]]
+  ['giveitem',['giveItem',['../class_character.html#a88d219c54c93f65ead5a66545c7ebf87',1,'Character']]],
+  ['givemultipleitems',['giveMultipleItems',['../class_character.html#ab989bd893527a365f26cb76837862550',1,'Character']]]
 ];

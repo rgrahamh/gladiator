@@ -6,31 +6,17 @@
 using namespace std;
 
 #ifndef WEAPONS
-#define WEAPONS
-enum weapons
-{
-    LANCE,
-    SWORD,
-    AXE,
-    LIGHT,
-    DARK,
-    ANIMA
-};
+#    define WEAPONS
+enum weapons { LANCE, SWORD, AXE, LIGHT, DARK, ANIMA };
 #endif
 
-enum styles
-{
-  WARRIOR,
-  MAGE,
-  DUALFIGHTER
-};
+enum styles { WARRIOR, MAGE, DUALFIGHTER };
 
 /**
  * @class Style <Style.h>
  * @brief A class to describe fighting styles for a player or enemy
- */ 
-class Style
-{
+ */
+class Style {
   public:
     Style();
     Style(int t, double a, double d, double c, double r, double e, double h, double sp, double sk, double l);
@@ -45,9 +31,9 @@ class Style
     double getSpeed();
     double getSkill();
     double getLuck();
-    bool *getStyleAbilities();
-    void setStyleAbilities(bool *ab);
-    string getStyleAbilityStr(bool *ab);
+    bool* getStyleAbilities();
+    void setStyleAbilities(bool* ab);
+    string getStyleAbilityStr(bool* ab);
 
   private:
     int type;

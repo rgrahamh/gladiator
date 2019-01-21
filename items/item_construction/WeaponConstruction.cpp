@@ -5,19 +5,15 @@
 
 using namespace std;
 
-Weapon *constructWeapon(string weaponName)
-{
-    if (weaponName.compare("Bronze Dagger") == 0)
-    {
-        return new Weapon(weaponName, 3, 3, 5, SWORD, false);
+Weapon* constructWeapon(string weaponName) {
+    if(weaponName.compare("Bronze Dagger") == 0) {
+        return new Weapon(weaponName, 3.0, 3.0, 5.0, SWORD, false);
     }
-    else if (weaponName.compare("Iron Dagger") == 0)
-    {
-        return new Weapon(weaponName, 5, 5, 7, SWORD, false);
+    else if(weaponName.compare("Iron Dagger") == 0) {
+        return new Weapon(weaponName, 5.0, 5.0, 7.0, SWORD, false);
     }
-    else if (weaponName.compare("Steel Dagger") == 0)
-    {
-        return new Weapon(weaponName, 7, 6, 9, SWORD, false);
+    else if(weaponName.compare("Steel Dagger") == 0) {
+        return new Weapon(weaponName, 7.0, 6.0, 9.0, SWORD, false);
     }
     return NULL;
 }

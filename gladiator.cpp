@@ -1,10 +1,11 @@
-#define PTR_SIZE sizeof(void *)
+#define PTR_SIZE sizeof(void*)
 #include <iostream>
 #include <string>
-#include "characters/Player.h"
+
 #include "characters/Enemy.h"
-#include "styles/Warrior.h"
+#include "characters/Player.h"
 #include "races/Human.h"
+#include "styles/Warrior.h"
 
 using namespace std;
 
@@ -12,8 +13,7 @@ using namespace std;
  * @struct PlayerInfo <gladiator.cpp>
  * @brief A struct to describe a player's chosen attributes
  */
-struct
-{
+struct {
     string name; /**< the name of the player */
     int race;    /**< an enum value for the type of race */
     int style;   /**< an enum value for the type of style */
@@ -23,10 +23,9 @@ string getInput(string question, int isCaps = 0);
 PlayerInfo getPlayerInfo();
 int getStyleType(string style);
 int getRaceType(string race);
-Player *instantiatePlayer(string n, int r, int s);
+Player* instantiatePlayer(string n, int r, int s);
 
-int main()
-{
+int main() {
     PlayerInfo pi = getPlayerInfo();
 
     // instantiate Player
@@ -35,15 +34,12 @@ int main()
     return 0;
 }
 
-string getInput(string question, int isCaps)
-{
+string getInput(string question, int isCaps) {
     string input = "";
     cout << question << endl;
     cin >> input;
-    for (unsigned long int i = 0; (i < input.length()); i++)
-    {
-        if (input[i] >= 65 && input[i] <= 90 && !isCaps)
-        {
+    for(unsigned long int i = 0; (i < input.length()); i++) {
+        if(input[i] >= 65 && input[i] <= 90 && !isCaps) {
             input[i] += 32;
         }
     }
@@ -54,23 +50,19 @@ string getInput(string question, int isCaps)
  * @brief Returns a struct of type PlayerInfo (containing name, style, and race) after asking the player some questions
  * @return A struct of type PlayerInfo 
  */
-PlayerInfo getPlayerInfo()
-{
+PlayerInfo getPlayerInfo() {
     string name = getInput("Welcome to The Arena! Tell me, adventurer, what's your name?", 1);
     string s, r;
     int style, race;
-    while (name.length() == 0)
-    {
+    while(name.length() == 0) {
         name = getInput("Come on now, don't be shy! Tell me what your name is!", 1);
     }
     s = getInput("Very well then, " + name + ". Are you a mage, a warrior, or a dualfighter?");
-    while (s.compare("warrior") != 0 && s.compare("mage") != 0 && s.compare("dualfighter"))
-    {
+    while(s.compare("warrior") != 0 && s.compare("mage") != 0 && s.compare("dualfighter")) {
         s = getInput("I've never heard of a " + s + "! Are you a mage, a warrior, or a dualfighter?");
     }
     r = getInput("OK, then. What's your race? Are you a human, dwarf, or elf?");
-    while (r.compare("human") != 0 && r.compare("dwarf") != 0 && r.compare("elf") != 0)
-    {
+    while(r.compare("human") != 0 && r.compare("dwarf") != 0 && r.compare("elf") != 0) {
         r = getInput("Don't lie to me, I can clearly tell what you aren't a " + r + "! Now, what race are you?");
     }
     cout << name << ", the " << r << " " << s << endl;
@@ -79,9 +71,9 @@ PlayerInfo getPlayerInfo()
     race = getRaceType(r);
 
     PlayerInfo pi = {
-        name,  // name
-        style, // style
-        race   // race
+      name,  // name
+      style, // style
+      race   // race
     };
     return pi;
 }
@@ -91,23 +83,18 @@ PlayerInfo getPlayerInfo()
  * @param style A string value indicating the style
  * @return The desired enumeration value for style
  */
-int getStyleType(string style)
-{
+int getStyleType(string style) {
     int s;
-    if (style.compare("warrior") == 0)
-    {
+    if(style.compare("warrior") == 0) {
         s = WARRIOR;
     }
-    else if (style.compare("mage") == 0)
-    {
+    else if(style.compare("mage") == 0) {
         s = MAGE;
     }
-    else if (style.compare("dualfighter") == 0)
-    {
+    else if(style.compare("dualfighter") == 0) {
         s = DUALFIGHTER;
     }
-    else
-    {
+    else {
         s = WARRIOR;
     }
 
@@ -119,23 +106,18 @@ int getStyleType(string style)
  * @param style A string value indicating the race
  * @return The desired enumeration value for race
  */
-int getRaceType(string race)
-{
+int getRaceType(string race) {
     int r;
-    if (race.compare("human") == 0)
-    {
+    if(race.compare("human") == 0) {
         r = HUMAN;
     }
-    else if (race.compare("dwarf") == 0)
-    {
+    else if(race.compare("dwarf") == 0) {
         r = DWARF;
     }
-    else if (race.compare("elf") == 0)
-    {
+    else if(race.compare("elf") == 0) {
         r = ELF;
     }
-    else
-    {
+    else {
         r = HUMAN;
     }
 
@@ -149,10 +131,9 @@ int getRaceType(string race)
  * @param s An integer enum value indicating the Player's style
  * @return A pointer to a new Player object
  */
-Player *instantiatePlayer(string n, int r, int s)
-{
-    Style *style = determineStyle(s);
-    Race *race = determineRace(r);
+Player* instantiatePlayer(string n, int r, int s) {
+    Style* style = determineStyle(s);
+    Race* race = determineRace(r);
 
     return new Player(n, *race, *style);
 }
@@ -164,10 +145,9 @@ Player *instantiatePlayer(string n, int r, int s)
  * @param s An enum representation of the style of the enemy
  * @param d The difficulty of the enemy
  */
-Enemy *instantiateEnemy(string n, int r, int s, int d)
-{
-    Style *style = determineStyle(s);
-    Race *race = determineRace(r);
+Enemy* instantiateEnemy(string n, int r, int s, int d) {
+    Style* style = determineStyle(s);
+    Race* race = determineRace(r);
 
     return new Enemy(n, *race, *style, BABY);
 }
@@ -177,21 +157,19 @@ Enemy *instantiateEnemy(string n, int r, int s, int d)
  * @param s The enum representation of the style
  * @return A pointer to an object of the style
  */
-Style *determineStyle(int s)
-{
-    Style *style;
+Style* determineStyle(int s) {
+    Style* style;
 
-    switch (s)
-    {
-    // case MAGE:
-    //     break;
-    case WARRIOR:
-        style = new Warrior();
-        break;
-    // case DUALFIGHTER:
-    //     break;
-    default:
-        style = new Warrior();
+    switch(s) {
+        // case MAGE:
+        //     break;
+        case WARRIOR:
+            style = new Warrior();
+            break;
+        // case DUALFIGHTER:
+        //     break;
+        default:
+            style = new Warrior();
     }
 
     return style;
@@ -202,21 +180,19 @@ Style *determineStyle(int s)
  * @param s The enum representation of the race
  * @return A pointer to an object of the race
  */
-Race *determineRace(int r)
-{
-    Race *race;
+Race* determineRace(int r) {
+    Race* race;
 
-    switch (r)
-    {
-    case HUMAN:
-        race = new Human();
-        break;
-    // case DWARF:
-    //     break;
-    // case ELF:
-    //     break;
-    default:
-        race = new Human();
+    switch(r) {
+        case HUMAN:
+            race = new Human();
+            break;
+        // case DWARF:
+        //     break;
+        // case ELF:
+        //     break;
+        default:
+            race = new Human();
     }
 
     return race;

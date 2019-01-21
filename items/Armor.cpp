@@ -10,8 +10,8 @@
  * @param t The type of armor
  * @return A new piece of armor
  */
-Armor::Armor(string n, double w, int val, double def, double res, int t) : Item(n, w, val, ARMOR)
-{
+Armor::Armor(string n, double w, int val, double def, double res, int t)
+    : Item(n, w, val, ARMOR) {
     this->defense = def;
     this->resilience = res;
     this->armorType = t;
@@ -20,16 +20,14 @@ Armor::Armor(string n, double w, int val, double def, double res, int t) : Item(
 /**
  * @brief The destructor for Armor
  */
-Armor::~Armor()
-{
+Armor::~Armor() {
 }
 
 /**
  * @brief Returns the defense stat of the armor
  * @return The defense stat of the armor
  */
-double Armor::getDefense()
-{
+double Armor::getDefense() {
     return this->defense;
 }
 
@@ -37,8 +35,7 @@ double Armor::getDefense()
  * @brief Returns the resilience stat of the armor
  * @return The resilience stat of the armor
  */
-double Armor::getResilence()
-{
+double Armor::getResilence() {
     return this->resilience;
 }
 
@@ -46,16 +43,14 @@ double Armor::getResilence()
  * @brief Returns the type of armor
  * @return The type of armor
  */
-int Armor::getArmorType()
-{
+int Armor::getArmorType() {
     return this->armorType;
 }
 
 /**
  * @brief Prints information about the armor
  */
-void Armor::print()
-{
+void Armor::print() {
     cout << this->name << ":" << endl
          << "Armor type: " << armorTypes[(this->armorType) - 1] << endl
          << "Defense: " << this->defense << endl

@@ -6,31 +6,17 @@
 using namespace std;
 
 #ifndef WEAPONS
-#define WEAPONS
-enum weapons
-{
-    LANCE,
-    SWORD,
-    AXE,
-    LIGHT,
-    DARK,
-    ANIMA
-};
+#    define WEAPONS
+enum weapons { LANCE, SWORD, AXE, LIGHT, DARK, ANIMA };
 #endif
 
-enum races
-{
-  HUMAN,
-  DWARF,
-  ELF
-};
+enum races { HUMAN, DWARF, ELF };
 
 /**
  * @class Race <Race.h>
  * @brief A class to describe a player or enemy's race
- */ 
-class Race
-{
+ */
+class Race {
   public:
     Race();
     Race(int t, double a, double d, double c, double r, double e, double h, double sp, double sk, double l);
@@ -45,9 +31,9 @@ class Race
     double getSpeed();
     double getSkill();
     double getLuck();
-    bool *getRaceAbilities();
-    void setRaceAbilities(bool *ab);
-    string getRaceAbilityString(bool *ab);
+    bool* getRaceAbilities();
+    void setRaceAbilities(bool* ab);
+    string getRaceAbilityString(bool* ab);
 
   private:
     int type;

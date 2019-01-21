@@ -4,8 +4,7 @@
  * @brief The default constructor for Race
  * @remarks It doesn't make sense to implement this constructor in the context of Gladiator; left stubbed. 
  */
-Race::Race()
-{
+Race::Race() {
 }
 
 /**
@@ -22,8 +21,7 @@ Race::Race()
  * @param l A double value for luck
  * @return A pointer to a race object with desired attributes
  */
-Race::Race(int t, double a, double d, double c, double r, double e, double h, double sp, double sk, double l)
-{
+Race::Race(int t, double a, double d, double c, double r, double e, double h, double sp, double sk, double l) {
     this->type = t;
     this->attack = a;
     this->defense = d;
@@ -40,16 +38,14 @@ Race::Race(int t, double a, double d, double c, double r, double e, double h, do
  * @brief The default deconstructor for Race
  * @remarks It doesn't make sense to implement this deconstructor in the context of Gladiator; left stubbed. 
  */
-Race::~Race()
-{
+Race::~Race() {
 }
 
 /**
  * @brief The getter function for type
  * @return A integer enum value of the race's type 
  */
-int Race::getType()
-{
+int Race::getType() {
     return this->type;
 }
 
@@ -57,8 +53,7 @@ int Race::getType()
  * @brief The getter function for attack
  * @return A double value of the race's attack 
  */
-double Race::getAttack()
-{
+double Race::getAttack() {
     return this->attack;
 }
 
@@ -66,8 +61,7 @@ double Race::getAttack()
  * @brief The getter function for defense
  * @return A double value of the race's defense 
  */
-double Race::getDefense()
-{
+double Race::getDefense() {
     return this->defense;
 }
 
@@ -75,8 +69,7 @@ double Race::getDefense()
  * @brief The getter function for constitution
  * @return A double value of the race's constitution 
  */
-double Race::getConstitution()
-{
+double Race::getConstitution() {
     return this->constitution;
 }
 
@@ -84,8 +77,7 @@ double Race::getConstitution()
  * @brief The getter function for resilience
  * @return A double value of the race's resilience 
  */
-double Race::getResilience()
-{
+double Race::getResilience() {
     return this->resilience;
 }
 
@@ -93,8 +85,7 @@ double Race::getResilience()
  * @brief The getter function for energy
  * @return A double value of the race's energy 
  */
-double Race::getEnergy()
-{
+double Race::getEnergy() {
     return this->energy;
 }
 
@@ -102,8 +93,7 @@ double Race::getEnergy()
  * @brief The getter function for health
  * @return A double value of the race's health 
  */
-double Race::getHealth()
-{
+double Race::getHealth() {
     return this->health;
 }
 
@@ -111,8 +101,7 @@ double Race::getHealth()
  * @brief The getter function for speed
  * @return A double value of the race's speed 
  */
-double Race::getSpeed()
-{
+double Race::getSpeed() {
     return this->speed;
 }
 
@@ -120,8 +109,7 @@ double Race::getSpeed()
  * @brief The getter function for skill
  * @return A double value of the race's skill 
  */
-double Race::getSkill()
-{
+double Race::getSkill() {
     return this->skill;
 }
 
@@ -129,8 +117,7 @@ double Race::getSkill()
  * @brief The getter function for luck
  * @return A double value of the race's luck 
  */
-double Race::getLuck()
-{
+double Race::getLuck() {
     return this->luck;
 }
 
@@ -138,8 +125,7 @@ double Race::getLuck()
  * @brief The getter function for abilities
  * @return A bool array value of the race's abilities 
  */
-bool *Race::getRaceAbilities()
-{
+bool* Race::getRaceAbilities() {
     return this->abilities;
 }
 
@@ -147,8 +133,7 @@ bool *Race::getRaceAbilities()
  * @brief The setter function for abilities
  * @param ab A bool array of desired abilities to be set for the race
  */
-void Race::setRaceAbilities(bool *ab)
-{
+void Race::setRaceAbilities(bool* ab) {
     copy(ab, ab + sizeof(ab), this->abilities);
 }
 
@@ -156,8 +141,7 @@ void Race::setRaceAbilities(bool *ab)
  * @brief A debugging utility to be able to view the abilities of a race
  * @return The string value of the race's abilties 
  */
-string Race::getRaceAbilityString(bool *ab)
-{
+string Race::getRaceAbilityString(bool* ab) {
     string result = "";
     (ab[0]) ? result = result + " LANCE" : result = result + "";
     (ab[1]) ? result = result + " SWORD" : result = result + "";

@@ -4,8 +4,7 @@
  * @brief The default constructor for Style
  * @remarks It doesn't make sense to implement this constructor in the context of Gladiator; left stubbed. 
  */
-Style::Style()
-{
+Style::Style() {
 }
 
 /**
@@ -22,8 +21,7 @@ Style::Style()
  * @param l A double value for luck
  * @return A pointer to a style object with desired attributes
  */
-Style::Style(int t, double a, double d, double c, double r, double e, double h, double sp, double sk, double l)
-{
+Style::Style(int t, double a, double d, double c, double r, double e, double h, double sp, double sk, double l) {
     this->type = t;
     this->attack = a;
     this->defense = d;
@@ -40,8 +38,7 @@ Style::Style(int t, double a, double d, double c, double r, double e, double h, 
  * @brief The default deconstructor for Style
  * @remarks It doesn't make sense to implement this deconstructor in the context of Gladiator; left stubbed. 
  */
-Style::~Style()
-{
+Style::~Style() {
 }
 
 /**
@@ -56,8 +53,7 @@ int Style::getType() {
  * @brief The getter function for attack
  * @return A double value of the style's attack 
  */
-double Style::getAttack()
-{
+double Style::getAttack() {
     return this->attack;
 }
 
@@ -65,8 +61,7 @@ double Style::getAttack()
  * @brief The getter function for defense
  * @return A double value of the style's defense 
  */
-double Style::getDefense()
-{
+double Style::getDefense() {
     return this->defense;
 }
 
@@ -74,8 +69,7 @@ double Style::getDefense()
  * @brief The getter function for constitution
  * @return A double value of the style's constitution 
  */
-double Style::getConstitution()
-{
+double Style::getConstitution() {
     return this->constitution;
 }
 
@@ -83,8 +77,7 @@ double Style::getConstitution()
  * @brief The getter function for resilience
  * @return A double value of the style's resilience 
  */
-double Style::getResilience()
-{
+double Style::getResilience() {
     return this->resilience;
 }
 
@@ -92,8 +85,7 @@ double Style::getResilience()
  * @brief The getter function for energy
  * @return A double value of the style's energy 
  */
-double Style::getEnergy()
-{
+double Style::getEnergy() {
     return this->energy;
 }
 
@@ -101,8 +93,7 @@ double Style::getEnergy()
  * @brief The getter function for health
  * @return A double value of the style's health 
  */
-double Style::getHealth()
-{
+double Style::getHealth() {
     return this->health;
 }
 
@@ -110,8 +101,7 @@ double Style::getHealth()
  * @brief The getter function for speed
  * @return A double value of the style's speed 
  */
-double Style::getSpeed()
-{
+double Style::getSpeed() {
     return this->speed;
 }
 
@@ -119,8 +109,7 @@ double Style::getSpeed()
  * @brief The getter function for skill
  * @return A double value of the style's skill 
  */
-double Style::getSkill()
-{
+double Style::getSkill() {
     return this->skill;
 }
 
@@ -128,8 +117,7 @@ double Style::getSkill()
  * @brief The getter function for luck
  * @return A double value of the style's luck 
  */
-double Style::getLuck()
-{
+double Style::getLuck() {
     return this->luck;
 }
 
@@ -137,8 +125,7 @@ double Style::getLuck()
  * @brief The getter function for abilities
  * @return A bool array value of the style's abilities 
  */
-bool *Style::getStyleAbilities()
-{
+bool* Style::getStyleAbilities() {
     return this->abilities;
 }
 
@@ -146,8 +133,7 @@ bool *Style::getStyleAbilities()
  * @brief The setter function for abilities
  * @param ab A bool array of desired abilities to be set for the style
  */
-void Style::setStyleAbilities(bool *ab)
-{
+void Style::setStyleAbilities(bool* ab) {
     copy(ab, ab + sizeof(ab), this->abilities);
 }
 
@@ -155,8 +141,7 @@ void Style::setStyleAbilities(bool *ab)
  * @brief A debugging utility to be able to view the abilities of a style
  * @return The string value of the style's abilties 
  */
-string Style::getStyleAbilityStr(bool *ab)
-{
+string Style::getStyleAbilityStr(bool* ab) {
     string result = "";
     (ab[0]) ? result = result + " LANCE" : result = result + "";
     (ab[1]) ? result = result + " SWORD" : result = result + "";

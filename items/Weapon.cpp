@@ -1,5 +1,6 @@
 #include "Weapon.h"
-#include "iostream"
+
+#include <iostream>
 
 /**
  * @brief Default constructor for the Weapon class
@@ -11,8 +12,8 @@
  * @param thnd If the weapon is two-handed
  * @return A new Weapon
  */
-Weapon::Weapon(string n, double w, int val, double dmg, int t, bool thnd, double def = 0, double res = 0) : Item(n, w, val, WEAPON)
-{
+Weapon::Weapon(string n, double w, int val, double dmg, int t, bool thnd, double def = 0, double res = 0)
+    : Item(n, w, val, WEAPON) {
     this->damage = dmg;
     this->weaponType = t;
     this->twoHanded = thnd;
@@ -23,16 +24,14 @@ Weapon::Weapon(string n, double w, int val, double dmg, int t, bool thnd, double
 /**
  * @brief The destructor for Weapon
  */
-Weapon::~Weapon()
-{
+Weapon::~Weapon() {
 }
 
 /**
  * @brief Returns the amount of damage that the weapon deals
  * @return The amount of damage that the weapon deals
  */
-double Weapon::getDamage()
-{
+double Weapon::getDamage() {
     return this->damage;
 }
 
@@ -40,16 +39,14 @@ double Weapon::getDamage()
  * @brief Returns the type of weapon
  * @return The type of weapon
  */
-int Weapon::getWeaponType()
-{
+int Weapon::getWeaponType() {
     return this->weaponType;
 }
 
 /**
  * @brief Prints information about the weapon
  */
-void Weapon::print()
-{
+void Weapon::print() {
     cout << this->name << ":" << endl
          << "Weapon type: " << weaponTypes[(this->weaponType) - 1] << endl
          << "Damage: " << this->damage << endl

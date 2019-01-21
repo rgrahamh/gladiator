@@ -8,8 +8,7 @@
  * @param t The type of item (defaults to MISC.)
  * @return An Item
  */
-Item::Item(string n, double w, int val, int t = MISC)
-{
+Item::Item(string n, double w, int val, int t = MISC) {
     this->name = n;
     this->type = t;
     this->weight = w;
@@ -19,16 +18,14 @@ Item::Item(string n, double w, int val, int t = MISC)
 /**
  * @brief Destructor for Item
  */
-Item::~Item()
-{
+Item::~Item() {
 }
 
 /**
  * @brief Returns the item name
  * @return The item name
  */
-string Item::getName()
-{
+string Item::getName() {
     return this->name;
 }
 
@@ -36,8 +33,7 @@ string Item::getName()
  * @brief Returns the item type
  * @return The item type
  */
-int Item::getType()
-{
+int Item::getType() {
     return this->type;
 }
 
@@ -45,8 +41,7 @@ int Item::getType()
  * @brief Returns the item weight
  * @return The item weight
  */
-double Item::getWeight()
-{
+double Item::getWeight() {
     return this->weight;
 }
 
@@ -54,8 +49,7 @@ double Item::getWeight()
  * @brief Returns the item value
  * @return The item value
  */
-int Item::getValue()
-{
+int Item::getValue() {
     return this->value;
 }
 
@@ -63,17 +57,13 @@ int Item::getValue()
  * @brief Renames an item
  * @param n The new item name
  */
-int Item::setName(string n)
-{
+int Item::setName(string n) {
     this->name = n;
 }
 
 /**
  * @brief Prints information about the item
  */
-void Item::print()
-{
-    cout << this->name << ":" << endl
-         << "Value: " << this->value << endl
-         << "Weight: " << this->weight << endl;
+void Item::print() {
+    cout << this->name << ":" << endl << "Value: " << this->value << endl << "Weight: " << this->weight << endl;
 }

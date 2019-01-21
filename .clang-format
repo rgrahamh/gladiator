@@ -1,0 +1,79 @@
+Language: Cpp
+
+#Alignment
+AlignEscapedNewlines: true
+AlignTrailingComments: true
+
+#Line Formatting Permissions
+AllowAllParametersOfDeclarationOnNextLine: true
+AllowShortBlocksOnASingleLine: true
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+ConstructorInitializerAllOnOneLineOrOnePerLine: false
+
+#Line Break Rules
+AlwaysBreakAfterReturnType: None
+AlwaysBreakBeforeMultilineStrings: false
+AlwaysBreakTemplateDeclarations: true
+BinPackArguments: true
+BinPackParameters: true
+BreakBeforeBraces: Custom
+BraceWrapping:
+    AfterClass: false
+    AfterControlStatement: false
+    AfterEnum: false
+    AfterFunction: false
+    AfterNamespace: false
+    AfterStruct: false
+    AfterUnion: false
+    AfterExternBlock: false
+    BeforeCatch: true
+    BeforeElse: true
+    SplitEmptyFunction: true
+    SplitEmptyRecord: true
+    SplitEmptyNamespace: true
+BreakBeforeBinaryOperators: None
+BreakBeforeTernaryOperators: false
+BreakConstructorInitializers: BeforeColon
+ColumnLimit: 120
+CompactNamespaces: true
+
+#Spacing
+Cpp11BracedListStyle: true
+ContinuationIndentWidth: 2
+IndentCaseLabels: true
+IndentPPDirectives: AfterHash
+IndentWidth: 4
+IndentWrappedFunctionNames: false
+PointerAlignment: Left
+SpaceAfterCStyleCast: false
+SpaceAfterTemplateKeyword: false
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeParens: Never
+SpaceInEmptyParentheses: false
+SpacesBeforeTrailingComments: 1
+SpacesInAngles: false
+SpacesInCStyleCastParentheses: false
+SpacesInContainerLiterals: false
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+
+#Commenting
+FixNamespaceComments: false
+ReflowComments: false
+
+#Inclusion
+IncludeBlocks: Regroup
+IncludeCategories:
+    - Regex:    '^<.*>'
+      Priority: 1
+    - Regex:    '^".*\.h"'
+      Priority: 2
+    - Regex:    '^".*\.cpp"'
+      Priority: 3
+    - Regex:    '.*'
+      Priority: 4
+SortIncludes: true
+SortUsingDeclarations: false

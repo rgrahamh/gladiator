@@ -9,8 +9,8 @@
  * @param equipArr The array of items for the enemy to equip
  * @return A pointer to a new Enemy object
  */
-Enemy::Enemy(string n, Race r, Style s, slot *inv, string *equipArr) : Character(name, race, style)
-{
+Enemy::Enemy(string n, Race r, Style s, slot* inv, string* equipArr)
+    : Character(name, race, style) {
     inventory = inv;
     equipMultipleItems(equipArr);
 }
@@ -23,42 +23,27 @@ Enemy::Enemy(string n, Race r, Style s, slot *inv, string *equipArr) : Character
  * @param d The enemy's difficulty level
  * @return A pointer to a new Enemy object
  */
-Enemy::Enemy(string name, Race race, Style style, int difficulty) : Character(name, race, style)
-{
-    Weapon *onHand = constructWeapon("Bronze Daggger");
-    Weapon *offHand = constructWeapon("Bronze Dagger");
-    Armor *helmet = constructArmor("Leather Helmet");
-    Armor *gloves = constructArmor("Leather Gloves");
-    Armor *boots = constructArmor("Leather Boots");
-    Armor *chest = constructArmor("Leather Vest");
-    Armor *pants = NULL;
-    Armor *necklace = constructArmor("Collar");
-    Armor *ring1 = NULL;
-    Armor *ring2 = NULL;
-    Armor *ring3 = NULL;
-    Armor *ring4 = NULL;
-    Item *newItems[12] = {onHand,
-                          offHand,
-                          helmet,
-                          gloves,
-                          boots,
-                          chest,
-                          pants,
-                          necklace,
-                          ring1,
-                          ring2,
-                          ring3,
-                          ring4};
+Enemy::Enemy(string name, Race race, Style style, int difficulty)
+    : Character(name, race, style) {
+    Weapon* onHand = constructWeapon("Bronze Daggger");
+    Weapon* offHand = constructWeapon("Bronze Dagger");
+    Armor* helmet = constructArmor("Leather Helmet");
+    Armor* gloves = constructArmor("Leather Gloves");
+    Armor* boots = constructArmor("Leather Boots");
+    Armor* chest = constructArmor("Leather Vest");
+    Armor* pants = NULL;
+    Armor* necklace = constructArmor("Collar");
+    Armor* ring1 = NULL;
+    Armor* ring2 = NULL;
+    Armor* ring3 = NULL;
+    Armor* ring4 = NULL;
+    Item* newItems[12] = {onHand, offHand,  helmet, gloves, boots, chest,
+                          pants,  necklace, ring1,  ring2,  ring3, ring4};
     this->giveMultipleItems(newItems);
 }
 
 /**
-<<<<<<< HEAD
  * @brief Destructor for the Enemy class
-=======
- * @brief The default deconstructor for the Enemy class 
->>>>>>> master
  */
-Enemy::~Enemy()
-{
+Enemy::~Enemy() {
 }

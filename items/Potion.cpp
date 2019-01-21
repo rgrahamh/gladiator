@@ -1,6 +1,8 @@
 #include "Potion.h"
-#include "item_construction/PotionConstruction.cpp"
+
 #include <iostream>
+
+#include "item_construction/PotionConstruction.cpp"
 
 /**
  * @brief The parameterized constructor for Potion
@@ -11,8 +13,7 @@
  * @param amnt The amount of {effect} that the potion does
  * @return A new potion
  */
-Potion::Potion(string n, double w, int val, int efct, int amnt) : Item(n, w, val, POTION)
-{
+Potion::Potion(string n, double w, int val, int efct, int amnt) : Item(n, w, val, POTION) {
     this->effect = efct;
     this->amount = amnt;
 }
@@ -20,16 +21,14 @@ Potion::Potion(string n, double w, int val, int efct, int amnt) : Item(n, w, val
 /**
  * @brief The destructor for Potion
  */
-Potion::~Potion()
-{
+Potion::~Potion() {
 }
 
 /**
  * @brief Returns the effect of the potion
  * @return The effect of the potion
  */
-int Potion::getEffect()
-{
+int Potion::getEffect() {
     return this->effect;
 }
 
@@ -37,16 +36,14 @@ int Potion::getEffect()
  * @brief Returns the amount of {effect} that the potion does
  * @return The amount of {effect} that the potion does
  */
-double Potion::getAmount()
-{
+double Potion::getAmount() {
     return this->amount;
 }
 
 /**
  * @brief Prints information about the potion
  */
-void Potion::print()
-{
+void Potion::print() {
     cout << this->name << ":" << endl
          << "Effect: " << potionEffects[(this->effect) - 1] << endl
          << "Amount: " << this->amount << endl
