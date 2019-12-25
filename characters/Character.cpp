@@ -310,11 +310,7 @@ void Character::equipWeapon(Weapon* weapon, int hand = 0) {
 int Character::equipMultipleItems(string* equipArr) {
     int equippedItems = 0;
     if(equipArr != NULL) {
-        int equipSize =
-          sizeof(equipArr) /
-          sizeof(
-            equipArr
-              [0]); //equipSize calculates how many items are being equipped
+        int equipSize = sizeof(equipArr) / sizeof(string*); //equipSize calculates how many items are being equipped
         int weaponVal = 0; //weaponVal keeps track of the weapon handedness
         int ringVal = 0;   //ringVal keeps track of the ring slots
         for(int i = 0; i < equipSize; i++) {
@@ -376,7 +372,7 @@ int Character::giveMultipleItems(Item** items) {
     if(items == NULL) {
         return 0;
     }
-    int numItems = sizeof(items) / sizeof(items[0]);
+    int numItems = sizeof(items) / sizeof(*(items[0]));
     int numItemsGiven = 0;
     for(int i = 0; numItemsGiven < numItems; i++) {
         if(items[i] != NULL) {

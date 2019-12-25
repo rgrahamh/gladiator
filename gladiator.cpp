@@ -125,34 +125,6 @@ int getRaceType(string race) {
 }
 
 /**
- * @brief Instantiates a new Player object
- * @param n A string value for the Player's name
- * @param r An integer enum value indicating the Player's race
- * @param s An integer enum value indicating the Player's style
- * @return A pointer to a new Player object
- */
-Player* instantiatePlayer(string n, int r, int s) {
-    Style* style = determineStyle(s);
-    Race* race = determineRace(r);
-
-    return new Player(n, *race, *style);
-}
-
-/**
- * @breif Instantiates a new Enemy object
- * @param n The name of the enemy
- * @param r An enum representation of the race of the enemy
- * @param s An enum representation of the style of the enemy
- * @param d The difficulty of the enemy
- */
-Enemy* instantiateEnemy(string n, int r, int s, int d) {
-    Style* style = determineStyle(s);
-    Race* race = determineRace(r);
-
-    return new Enemy(n, *race, *style, BABY);
-}
-
-/**
  * @breif Determines the character's style based on its enumeration
  * @param s The enum representation of the style
  * @return A pointer to an object of the style
@@ -196,4 +168,32 @@ Race* determineRace(int r) {
     }
 
     return race;
+}
+
+/**
+ * @brief Instantiates a new Player object
+ * @param n A string value for the Player's name
+ * @param r An integer enum value indicating the Player's race
+ * @param s An integer enum value indicating the Player's style
+ * @return A pointer to a new Player object
+ */
+Player* instantiatePlayer(string n, int r, int s) {
+    Style* style = determineStyle(s);
+    Race* race = determineRace(r);
+
+    return new Player(n, *race, *style);
+}
+
+/**
+ * @breif Instantiates a new Enemy object
+ * @param n The name of the enemy
+ * @param r An enum representation of the race of the enemy
+ * @param s An enum representation of the style of the enemy
+ * @param d The difficulty of the enemy
+ */
+Enemy* instantiateEnemy(string n, int r, int s, int d) {
+    Style* style = determineStyle(s);
+    Race* race = determineRace(r);
+
+    return new Enemy(n, *race, *style, BABY);
 }

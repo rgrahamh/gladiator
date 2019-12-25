@@ -5,7 +5,6 @@
 #include <string>
 
 #include "Item.h"
-#include "item_construction/ArmorConstruction.cpp"
 
 const string armorTypes[8] = {"Helmet", "Gloves", "Boots", "Chest", "Pants", "Cloak", "Necklace", "Ring"};
 

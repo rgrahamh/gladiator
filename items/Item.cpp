@@ -57,7 +57,7 @@ int Item::getValue() {
  * @brief Renames an item
  * @param n The new item name
  */
-int Item::setName(string n) {
+void Item::setName(string n) {
     this->name = n;
 }
 

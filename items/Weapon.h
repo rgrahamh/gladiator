@@ -3,8 +3,6 @@
 
 #include "Item.h"
 
-#include "item_construction/WeaponConstruction.cpp"
-
 const string weaponTypes[7] = {"Lance", "Sword", "Axe", "Sheild", "Light", "Dark", "Anima"};
 
 #ifndef WEAPONS

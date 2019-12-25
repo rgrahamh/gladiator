@@ -1,8 +1,8 @@
 #include "Potion.h"
 
-#include <iostream>
-
 #include "item_construction/PotionConstruction.cpp"
+
+#include <iostream>
 
 /**
  * @brief The parameterized constructor for Potion

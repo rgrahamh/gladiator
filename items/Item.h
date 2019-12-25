@@ -20,7 +20,7 @@ class Item {
     int getType();
     double getWeight();
     int getValue();
-    int setName(string n);
+    void setName(string n);
     void print();
 
   protected:
