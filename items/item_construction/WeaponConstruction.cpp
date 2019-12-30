@@ -1,7 +1,4 @@
-#ifndef WEAPON_CONSTRUCTION
-#define WEAPON_CONSTRUCTION
-
-#include "../Weapon.h"
+#include "ItemConstruction.h"
 
 using namespace std;
 
@@ -17,4 +14,3 @@ Weapon* constructWeapon(string weaponName) {
     }
     return NULL;
 }
-#endif

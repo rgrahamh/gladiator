@@ -14,13 +14,15 @@
 #include "../items/Potion.h"
 #include "../items/Weapon.h"
 
+#include "../items/item_construction/ItemConstruction.h"
+
 /**
  * @class Character <Character.h>
  * @brief A class to describe a player or enemy
  */
 class Character {
   public:
-    Character(string n, Race race, Style style);
+    Character(string n, Race* r, Style* s);
     ~Character();
     void determineStats();
     string getName();
@@ -70,8 +72,8 @@ class Character {
     slot* inventory;
     equipment equipped;
     string name;
-    Race race;
-    Style style;
+    Race *race;
+    Style *style;
     double attack;
     double defense;
     double constitution;

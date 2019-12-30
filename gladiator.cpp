@@ -24,12 +24,14 @@ PlayerInfo getPlayerInfo();
 int getStyleType(string style);
 int getRaceType(string race);
 Player* instantiatePlayer(string n, int r, int s);
+Enemy* instantiateEnemy(string n, int r, int s, int d);
 
 int main() {
     PlayerInfo pi = getPlayerInfo();
 
     // instantiate Player
     Player player = *instantiatePlayer(pi.name, pi.race, pi.style);
+    Enemy enemy = *instantiateEnemy("Bad Guy", 0, 0, 0);
 
     return 0;
 }
@@ -181,7 +183,7 @@ Player* instantiatePlayer(string n, int r, int s) {
     Style* style = determineStyle(s);
     Race* race = determineRace(r);
 
-    return new Player(n, *race, *style);
+    return new Player(n, race, style);
 }
 
 /**
@@ -195,5 +197,5 @@ Enemy* instantiateEnemy(string n, int r, int s, int d) {
     Style* style = determineStyle(s);
     Race* race = determineRace(r);
 
-    return new Enemy(n, *race, *style, BABY);
+    return new Enemy(n, race, style, d);
 }

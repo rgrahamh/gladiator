@@ -1,7 +1,4 @@
-#ifndef POTION_CONSTRUCTION
-#define POTION_CONSTRUCTION
-
-#include "../Potion.h"
+#include "ItemConstruction.h"
 
 using namespace std;
 
@@ -23,4 +20,3 @@ Potion* constructPotion(string potionName) {
     }
     return NULL;
 }
-#endif

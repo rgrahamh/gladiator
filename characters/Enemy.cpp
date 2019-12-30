@@ -9,8 +9,8 @@
  * @param equipArr The array of items for the enemy to equip
  * @return A pointer to a new Enemy object
  */
-Enemy::Enemy(string n, Race r, Style s, slot* inv, string* equipArr)
-    : Character(name, race, style) {
+Enemy::Enemy(string n, Race* r, Style* s, slot* inv, string* equipArr)
+    : Character(n, r, s) {
     inventory = inv;
     equipMultipleItems(equipArr);
 }
@@ -23,8 +23,8 @@ Enemy::Enemy(string n, Race r, Style s, slot* inv, string* equipArr)
  * @param d The enemy's difficulty level
  * @return A pointer to a new Enemy object
  */
-Enemy::Enemy(string name, Race race, Style style, int difficulty)
-    : Character(name, race, style) {
+Enemy::Enemy(string n, Race* r, Style* s, int difficulty)
+    : Character(n, r, s) {
     Weapon* onHand = constructWeapon("Bronze Daggger");
     Weapon* offHand = constructWeapon("Bronze Dagger");
     Armor* helmet = constructArmor("Leather Helmet");

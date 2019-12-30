@@ -12,7 +12,7 @@ using namespace std;
  */
 class Player : public Character {
   public:
-    Player(string n, Race race, Style style);
+    Player(string n, Race* r, Style* s);
     ~Player();
 };
 #endif

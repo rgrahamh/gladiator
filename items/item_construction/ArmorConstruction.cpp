@@ -1,9 +1,4 @@
-#ifndef ARMOR_CONSTRUCTION
-#define ARMOR_CONSTRUCTION
-
-#include "../Armor.h"
-
-using namespace std;
+#include "ItemConstruction.h"
 
 /**
  * @breif Constructs and passes back commonly created pieces of armor
@@ -57,4 +52,3 @@ Armor* constructArmor(string armorName) {
 
     return NULL;
 }
-#endif

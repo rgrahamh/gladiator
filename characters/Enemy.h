@@ -10,8 +10,8 @@ enum difficulty { BABY, EASY, MEDIUM, HARD, INSANE };
  */
 class Enemy : public Character {
   public:
-    Enemy(string name, Race race, Style style, slot* inv, string* equipArr);
-    Enemy(string name, Race race, Style style, int difficulty);
+    Enemy(string name, Race* r, Style* s, slot* inv, string* equipArr);
+    Enemy(string name, Race* r, Style* s, int difficulty);
     ~Enemy();
 };
 #endif

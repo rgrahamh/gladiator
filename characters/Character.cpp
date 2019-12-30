@@ -10,7 +10,7 @@ using namespace std;
  * @param r The race of the character
  * @param s The style of the character
  */
-Character::Character(string n, Race r, Style s) {
+Character::Character(string n, Race* r, Style* s) {
     this->race = r;
     this->style = s;
     this->name = n;
@@ -27,27 +27,29 @@ Character::Character(string n, Race r, Style s) {
  */
 Character::~Character() {
     free(inventory);
+    delete race;
+    delete style;
 }
 
 /**
  * @brief Determines the stats of a character
  */
 void Character::determineStats() {
-    this->attack = this->race.getAttack() + this->style.getAttack();
-    this->defense = this->race.getDefense() + this->style.getDefense();
+    this->attack = this->race->getAttack() + this->style->getAttack();
+    this->defense = this->race->getDefense() + this->style->getDefense();
     this->constitution =
-      this->race.getConstitution() + this->style.getConstitution();
-    this->resilience = this->race.getResilience() + this->style.getResilience();
-    this->energy = this->race.getEnergy() + this->style.getEnergy();
-    this->health = this->race.getHealth() + this->style.getHealth();
-    this->speed = this->race.getSpeed() + this->style.getSpeed();
-    this->skill = this->race.getSkill() + this->style.getSkill();
-    this->luck = this->race.getLuck() + this->style.getLuck();
+      this->race->getConstitution() + this->style->getConstitution();
+    this->resilience = this->race->getResilience() + this->style->getResilience();
+    this->energy = this->race->getEnergy() + this->style->getEnergy();
+    this->health = this->race->getHealth() + this->style->getHealth();
+    this->speed = this->race->getSpeed() + this->style->getSpeed();
+    this->skill = this->race->getSkill() + this->style->getSkill();
+    this->luck = this->race->getLuck() + this->style->getLuck();
 
     bool characterAbils[6] = {false, false, false, false, false, false};
     for(int i = 0; i < 6; i++) {
-        characterAbils[i] = this->race.getRaceAbilities()[i] &&
-                            this->style.getStyleAbilities()[i];
+        characterAbils[i] = this->race->getRaceAbilities()[i] &&
+                            this->style->getStyleAbilities()[i];
     }
 
     copy(characterAbils, characterAbils + sizeof(characterAbils),

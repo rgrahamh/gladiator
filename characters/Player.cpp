@@ -7,7 +7,7 @@
  * @param style The style of the player
  * @return A pointer to the Player object
  */
-Player::Player(string n, Race race, Style style) : Character(n, race, style) {
+Player::Player(string n, Race* r, Style* s) : Character(n, r, s) {
 }
 
 /**
